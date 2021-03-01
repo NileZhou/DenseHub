@@ -1,3 +1,6 @@
+// Monotone Stack--Dynamic Programming--Math
+// 代码力不够强，未快速实现单调栈
+
 // 题目
 // https://leetcode-cn.com/problems/trapping-rain-water/
 
