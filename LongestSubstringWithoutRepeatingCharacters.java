@@ -7,7 +7,7 @@ class Solution {
         Map<Character, Integer> map = new HashMap<>();
         for (int i=0, j=0; i<n; ++i) {
             if (map.containsKey(arr[i])) {
-                j = Math.max(j, map.get(arr[i]) + 1);
+                j = Math.max(j, map.get(arr[i]) + 1); // 注意: 这里必须保证j的单调性
             }
             map.put(arr[i], i);
             ans = Math.max(i - j + 1, ans);
