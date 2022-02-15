@@ -1,4 +1,4 @@
-// Brute Force--Greedy
+package hot;// Brute Force--Greedy
 // 代码逻辑错误，未能正确表达自己想法
 // https://codeforces.com/contest/1491/problem/B
 
@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.io.StreamTokenizer;
 
 
-public class Main {
+public class MinimalCost {
     static StreamTokenizer st=new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
 
     public static void solveB() {

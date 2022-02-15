@@ -1,15 +1,27 @@
+package hot;
+
 /**
  * https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
  */
-class Solution {
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+class ReverseNodesInKGroup {
     private ListNode reverse(ListNode head) {
         ListNode dummy = new ListNode(), p = head, pnext;
         while (p != null) {

@@ -1,4 +1,4 @@
-// Monotone Stack--Dynamic Programming--Math
+package hot;// Monotone Stack--Dynamic Programming--Math
 // 代码力不够强，未快速实现单调栈
 
 // 题目
@@ -9,7 +9,7 @@
 // 关键之处是想出单调栈的逻辑: 从左到右存的是在height[]里的下标值，高度由大到小, 下标值也由小到大
 // 这是计算行的雨水
 // 时间复杂度O(n), 空间复杂度O(k) k可能为n
-class Solution {
+public class TrappingRainWater {
     public int trap(int[] height) {
         int n = height.length;
         if (n < 3) return 0;

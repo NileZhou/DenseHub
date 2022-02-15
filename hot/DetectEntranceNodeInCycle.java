@@ -1,16 +1,18 @@
+package hot;
+
 /**
  * https://leetcode-cn.com/problems/linked-list-cycle-ii/
  * Definition for singly-linked list.
- * class ListNode {
+ * class hot.ListNode {
  *     int val;
- *     ListNode next;
- *     ListNode(int x) {
+ *     hot.ListNode next;
+ *     hot.ListNode(int x) {
  *         val = x;
  *         next = null;
  *     }
  * }
  */
-public class Solution {
+public class DetectEntranceNodeInCycle {
     public ListNode detectCycle(ListNode head) {
         if (head == null) return null;
         ListNode fast = head.next, slow = head;
