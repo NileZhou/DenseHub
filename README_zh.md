@@ -1,6 +1,6 @@
 # AI Dense Hub
 
-This is our Swiss Army knife for solving problems in the AI field.
+解决AI领域各种问题的瑞士军刀
 
 
 [![Travis](https://img.shields.io/badge/language-Java-blue.svg)]()
