@@ -1,23 +1,21 @@
-# algorithmTemplates
-Code snippets that need to be practiced over and over again that appear in the algorithm problems
+# AI Dense Hub
+
+This is our Swiss Army knife for solving problems in the AI field.
+
 
 [![Travis](https://img.shields.io/badge/language-Java-blue.svg)]()
 [![Travis](https://img.shields.io/badge/language-Python-red.svg)]()
 [![Travis](https://img.shields.io/badge/language-Go-red.svg)]()
 
-I am an algorithm beginner, while I'm learning the algorithms, I am always amazed by the performance of some algorithm 
-masters -- It seems that they don't need to think given an algorithm problem.
 
-I guess they are masters of these two tasks:
-- disassemble the problem quickly and come up with one or more possible solution
-- **transform the solution into code snippets that they are familiar with and implement it quickly**
 
-This repository is to handle the problem: 
-## Collect those helpful code snippets that need to be practice over and over again.
 
-Look forward to your suggestion. Welcome to join us!
+## Table of Content
 
-code snippets lists:
+* [Home](/)
+* [Interview](/ch1)
+* [01.LLM](/01.大语言模型基础/)
+  * [1.1 LLM History](/01.大语言模型基础/)
+    * [1.Language Model](/01.大语言模型基础/1.语言模型/1.语言模型.md "1.语言模型")
 
-## math
-[Fast pow(Java)](codes/math/FastPow.java)
+
