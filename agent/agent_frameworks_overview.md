@@ -67,13 +67,11 @@ Factors to consider during the retrieval process:
 <img width='70%' src="image/code.png" />
 </div>
 
-a. Interpreter the user question to code snippets, then: 
+a. Interpreter the user question to code snippets, then:
 
 b. plan (divide and conquer) to sub-tasks,
 
 c. all interpreter to python code then execute
-
-
 
 # key features of agent
 
@@ -193,11 +191,19 @@ key benchmark:
 
 - concurrent execution time (scheduled)
 
-| Project                                      | TAG                                                               | driven method                                                                                                                           | supported by | recommend reason                                                                                                                          | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| -------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
-| [AIOS](https://github.com/agiresearch/AIOS)     | resource optimize (FIFO, LRU)<br />concurrent<br />access control | prompt + human command                                                                                                                  | community    | LLM as the brain of OS<br />context -- llm kernel -- memory -- storage -- scheduler <br />self-host system calls                         | 17 / 20         | 2.9 / 0.3 / 0 / 7         |
-| [MemGPT](https://github.com/cpacker/MemGPT)     | virtual context                                                   | predefined prompt (natural languge)<br />look [system-prompts](https://github.com/cpacker/MemGPT/tree/main/memgpt/prompts/system)         | community    | It manages a virtual context to create unbounded LLM context<br />prompt tokens: [system instructions] + [working context] + [FIFO Queue] | 28 / 90          | 10.7 / 1.2 / 15 / 249     |
-| [phidata](https://github.com/phidatahq/phidata) | rick toolkits<br />multimodal                                     | predefined prompt (natural languge)<br />look [assistant.py](https://github.com/phidatahq/phidata/blob/main/cookbook/llm_os/assistant.py) | phidata      | memory + knowledges + rich tools                                                                                                          | 46 / 37          | 10.5 / 1.5 / 21 / 48      |
+| Project                                      | TAG                                                               | driven method                                                                                                                           | supported by | recommend reason                                                                                                                                                                                                                   | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| -------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [AIOS](https://github.com/agiresearch/AIOS)     | resource optimize (FIFO, LRU)<br />concurrent<br />access control | prompt + human command                                                                                                                  | community    | LLM as the brain of OS<br />context -- llm kernel -- memory -- storage -- scheduler <br />self-host system calls,<br />see also [OpenAGI: Package for AI Agent creation](https://github.com/agiresearch/OpenAGI?tab=readme-ov-file) | 17 / 20         | 2.9 / 0.3 / 0 / 7         |
+| [MemGPT](https://github.com/cpacker/MemGPT)     | virtual context                                                   | predefined prompt (natural languge)<br />look [system-prompts](https://github.com/cpacker/MemGPT/tree/main/memgpt/prompts/system)         | community    | It manages a virtual context to create unbounded LLM context<br />prompt tokens: [system instructions] + [working context] + [FIFO Queue]                                                                                          | 28 / 90          | 10.7 / 1.2 / 15 / 249     |
+| [phidata](https://github.com/phidatahq/phidata) | rick toolkits<br />multimodal                                     | predefined prompt (natural languge)<br />look [assistant.py](https://github.com/phidatahq/phidata/blob/main/cookbook/llm_os/assistant.py) | phidata      | memory + knowledges + rich tools                                                                                                                                                                                                   | 46 / 37          | 10.5 / 1.5 / 21 / 48      |
+
+# Embodied Agent
+
+key features:
+
+
+| Project | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------- | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
 
 # *AIGC-centric software architecture
 
