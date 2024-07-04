@@ -63,9 +63,8 @@ Factors to consider during the retrieval process:
 
 3. interprete to code then execute
 
-<div align='center'>
-<img width='70%' src="image/code.png" />
-</div>
+![code](image/code.png)
+
 
 a. Interpreter the user question to code snippets, then:
 
