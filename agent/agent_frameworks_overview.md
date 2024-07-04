@@ -43,14 +43,14 @@ The full operation process of an agent:
 - asnyc (和persistent)
 - **duplex**
 - local-friendly
-- cloud-friendly (云端多台实例，得加锁，机制 关闭)
+- cloud-friendly
 - multi-agent
 - **rich-patterns**
-- self-host language (驱动方式, dsl, )
+- self-host language
 - no-handcraft prompt
 - include devops
-- **support multi-task**  (是否支持多任务)
-- **specific stream protocol (用的什么流式协议)**
+- **support multi-task**
+- **specific stream protocol**
 
 # agent build frameworks
 
