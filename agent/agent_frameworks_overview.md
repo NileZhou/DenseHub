@@ -4,9 +4,7 @@
 2. Identify the key issues in each subfield, and determine the key benchmarks / metrics.
 3. Understand the key details that we need to focus on (read the readme, code, and papers with questions in mind).
 
-
 # Befor Read
-
 
 **C1m** : the number of **C**ommits for recent **1** **m**onth, measure the activity of a repository
 
@@ -22,7 +20,59 @@ The typical minimal operation process of an agent:
 
 Perception -> Planning -> Action
 
-The full operation process of an agent:
+# agent design pattern (WIP)
+
+## single agent
+
+1. ReAct(Reason + Act):
+
+   Actions
+
+Reasoning Traces <--> LM <--------------> Env
+
+    Observations
+
+2. Plan and Execute ReAct:
+
+Divide user request to:
+
+a. plan then generated tasks (DAG)
+
+b. execute the DAG (use the LLM Compiler)
+
+c. replan
+
+## multi-agent
+
+1. memory stream
+
+![memory_stream](image/memory_stream.png)
+
+All agents records are stored in a memory stream, then retrieve them when needed, then write/read the memory stream persistently
+
+Factors to consider during the retrieval process:
+
+- Recency
+- Importance
+- Relevance
+- Reflection of LM
+
+2. role-based, graph-based automaton
+
+![graph-based](image/graph-based.png)
+
+3. interprete to code then execute
+
+<div align='center'>
+<img width='70%' src="image/code.png" />
+</div>
+
+a. Interpreter the user question to code snippets, then: 
+
+b. plan (divide and conquer) to sub-tasks,
+
+c. all interpreter to python code then execute
+
 
 
 # key features of agent
@@ -31,6 +81,8 @@ The full operation process of an agent:
 - continual learning
 - persistent
 - multimodal
+- tool-create
+- easy-to-debug
 - multi-agent cooperation
 - complex task solving (divide and conquer)
 - **driving method (code, dsl, prompt, etc.)**
@@ -51,37 +103,38 @@ The full operation process of an agent:
 - include devops
 - **support multi-task**
 - **specific stream protocol**
+- cryptographically secured
+- rich toolkits
 
 # agent build frameworks
 
-| framework                                                       | TAG                                                                     | driven method            | supported by                                    | recommend reason                                                                                                               | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------ | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------- | ------------------------- |
-| [sglang](https://github.com/sgl-project/sglang)                    | self-host language                                                      | prompt + custom compiler | stanford & UCBerkely<br />students              | a structured generation language.<br />High-Performance Backend Runtime<br />co-designing the frontend and runtime system.   | 37 / 54          | 2.8 / 0.18 / 8 / 165      |
-| [dspy](https://github.com/stanfordnlp/dspy)                        | no-handcraft prompt                                                     | optimizer                | stanfordnlp                                     | The framework for programming—not prompting models.<br />algorithmically optimizing LM prompts and weights                    | 119 / 178        | 13.9 / 1.1 / 62 / 188     |
-| [langchain](https://github.com/langchain-ai/langchain)             | include devops<br />self-host language<br />go / js version             | prompt + LCEL            | langchain-ai                                    | a comprehensive ecoysystem for build agent<br />self-host language: LCEL                                                      | 573 / 2898      | 88.5 / 13.9 / 444 / 691   |
-| [langgraph](https://github.com/langchain-ai/langgraph)             | multi-agent workflow<br />persistence                                   |                          | langchain-ai                                    | a library for building stateful, multi-actor applications<br />create controllable/persistent agent and multi-agent workflows | 234 / 53         | 4.2 / 0.62 / 17 / 32      |
-| [autogen](https://github.com/microsoft/autogen)                    | multi-agent<br />rich-patterns                                          |                          | microsoft                                       | a framework for building multi-agents to solve complex workflows<br />support diverse conversation patterns                   | 67 / 310         | 28 / 4.1 / 114 / 526      |
-| [agentUniverse](https://github.com/alipay/agentUniverse)           | multi-agent<br />rich-patterns                                          |                          | alipay                                          | Rich Multi-Agent Collaboration Modes<br />Seamless Integration of Domain Expertise                                             | 103 / 8          | 0.5 / 0.06 / 3 / 1        |
-| [livekit/agents](https://github.com/livekit/agents)                | async                                                                   | prompt                   | livekit                                         | an agent sdk for LiveKit WebRTC, used for real-time audio/video generate                                                      | 21 / 18          | 0.64 / 0.10 / 5 / 33      |
-| [web-llm](https://github.com/mlc-ai/web-llm)                       | in-browser<br />local-friendly                                          |                          | mlc.ai                                          | leverages WebGPU for hardware acceleration, wihout server-side processing                                                     | 22 / 37          | 11.7 / 0.73 / 1 / 51   |
-| [modelscope-agent](https://github.com/modelscope/modelscope-agent) | support async<br />multi-agent (production level)<br />high-scalability | prompt                   | alibaba<br />Institutefor Intelligent Computing | a huggingface-like bridge with llm communities<br />using ray to implement multi-agent mode for efficiency                     | 28 / 37          | 2.2 / 0.24 / 3 / 51       |
-| [llama-agents](https://github.com/run-llama/llama-agents)          | async-first<br />multi-agent<br />human-in-the-loop                     | message queue            | LlamaIndex                                      | user <-> control plane <-> MQ <-> agents<br />agents pull from MQ<br />well-abstraction                                        | 51 / 6           | 0.83 / 0.06 / 3 / 18      |
-| [dify](https://github.com/langgenius/dify)                         | app development platform                                                |                          | Dify.AI                                         | Coze like platform                                                                                                             | 310 / 286        | 36 / 4.9 / 46 / 271       |
-| [Flowise](https://github.com/FlowiseAI/Flowise)                    | just workflow, not agent                                                |                          | FlowiseAI                                       | drag & drop UI to build LLM workflow                                                                                           | 39 / 118         | 27.2 / 14 / 33 / 377      |
+| framework                                                       | TAG                                                                                      | driven method            | supported by                                    | recommend reason                                                                                                                                                                                                                                                                               | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------ | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [sglang](https://github.com/sgl-project/sglang)                    | self-host language                                                                       | prompt + custom compiler | stanford & UCBerkely<br />students              | a structured generation language.<br />High-Performance Backend Runtime<br />co-designing the frontend and runtime system.                                                                                                                                                                   | 37 / 54          | 2.8 / 0.18 / 8 / 165      |
+| [dspy](https://github.com/stanfordnlp/dspy)                        | no-handcraft prompt                                                                      | optimizer                | stanfordnlp                                     | The framework for programming—not prompting models.<br />algorithmically optimizing LM prompts and weights                                                                                                                                                                                    | 119 / 178        | 13.9 / 1.1 / 62 / 188     |
+| [langchain](https://github.com/langchain-ai/langchain)             | include devops<br />self-host language<br />go / js version                              | prompt + LCEL            | langchain-ai                                    | a comprehensive ecoysystem for build agent<br />self-host language: LCEL                                                                                                                                                                                                                      | 573 / 2898      | 88.5 / 13.9 / 444 / 691   |
+| [langgraph](https://github.com/langchain-ai/langgraph)             | multi-agent workflow<br />persistence<br />async                                         | compiled graph + channel | langchain-ai                                    | a library for building stateful, multi-actor applications<br />create controllable/persistent agent and multi-agent workflows                                                                                                                                                                 | 234 / 53         | 4.2 / 0.62 / 17 / 32      |
+| [autogen](https://github.com/microsoft/autogen)                    | multi-agent<br />rich-patterns<br />rich-toolkits                                        | prompt                   | microsoft                                       | a framework for building multi-agents to solve complex workflows<br />support diverse conversation patterns                                                                                                                                                                                   | 67 / 310         | 28 / 4.1 / 114 / 526      |
+| [agentUniverse](https://github.com/alipay/agentUniverse)           | multi-agent<br />rich-patterns                                                           | prompt + config          | alipay                                          | Rich Multi-Agent Collaboration Modes<br />Seamless Integration of Domain Expertise<br />rich plan methods (execute, nl2api, peer, rag, react, reviewing)                                                                                                                                       | 103 / 8          | 0.5 / 0.06 / 3 / 1        |
+| [livekit/agents](https://github.com/livekit/agents)                | async                                                                                    | prompt                   | livekit                                         | an agent sdk for LiveKit WebRTC, used for real-time audio/video generate                                                                                                                                                                                                                      | 21 / 18          | 0.64 / 0.10 / 5 / 33      |
+| [web-llm](https://github.com/mlc-ai/web-llm)                       | in-browser<br />local-friendly<br />async                                                | prompt                   | mlc.ai                                          | leverages WebGPU for hardware acceleration, wihout server-side processing                                                                                                                                                                                                                     | 22 / 37          | 11.7 / 0.73 / 1 / 51   |
+| [modelscope-agent](https://github.com/modelscope/modelscope-agent) | support async<br />support rpc<br />multi-agent (production level)<br />high-scalability | prompt                   | alibaba<br />Institutefor Intelligent Computing | a huggingface-like bridge with llm communities<br />using ray to implement multi-agent mode for efficiency                                                                                                                                                                                     | 28 / 37          | 2.2 / 0.24 / 3 / 51       |
+| [llama-agents](https://github.com/run-llama/llama-agents)          | async-first<br />multi-agent<br />human-in-the-loop                                      | message queue            | LlamaIndex                                      | user <-> control plane <-> MQ <-> agents<br />agents pull from MQ<br />well-abstraction                                                                                                                                                                                                        | 51 / 6           | 0.83 / 0.06 / 3 / 18      |
+| [TaskWeaver](https://github.com/microsoft/TaskWeaver)              | easy-to-debug                                                                            | python code              | microsoft                                       | A code-first agent framework for seamlessly planning and executing data analytics tasks<br />It consists of planner, code generator, code executor.<br />easy to integrate with domain specific data / algorithm<br />support stateful execution<br />session management to separate user data | 6 / 24           | 5 / 0.64 / 6 / 29         |
+| [dify](https://github.com/langgenius/dify)                         | app development platform<br />rich-toolkits                                              | prompt + workflow        | Dify.AI                                         | Coze like platform                                                                                                                                                                                                                                                                             | 310 / 286        | 36 / 4.9 / 46 / 271       |
+| [Flowise](https://github.com/FlowiseAI/Flowise)                    | just workflow, not agent                                                                 | workflow                 | FlowiseAI                                       | drag & drop UI to build LLM workflow                                                                                                                                                                                                                                                           | 39 / 118         | 27.2 / 14 / 33 / 377      |
 
 # autonomous agent framework
 
-| Project                                                 | TAG                                                                    | driven method            | supported by | recommend reason                                                                                                                    | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| ------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
-| [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | autonomous                                                             | prompt                   | AutoGPT      | autonomously accomplish minor tasks<br />thriving ui / cli ecosystem                                                                | 40 / 722         | 164 / 43.4 / 17 / 50      |
-| [aiwaves-cn/agents](https://github.com/aiwaves-cn/agents)  | autonomous                                                             | loss and backpropogation | AIWaves      | Agent symbolic learning                                                                                                             | 5 / 22           | 4.8 / 0.37 / 1 / 32       |
-| [crewAI](https://github.com/joaomdmoura/crewAI)            | persistent<br />multi-agent<br />complex task solving                  |                          | crewAI       | enable AI agents like a well-oiled crew                                                                                            | 47 / 98          | 16.8 / 2.3 / 44 / 412     |
-| [llama-agents](https://github.com/run-llama/llama-agents)  | multi-agent<br />async-first                                           |                          | llama-index  | async-first framework for building multi-agent systems                                                                             | 48 / 6           | 0.79 / 0.061 / 4 / 16     |
-| [MemGPT](https://github.com/cpacker/MemGPT)                | long-term memory/state                                                 |                          | community    | Create agents with long-term memory and custom tools                                                                               | 24 / 27          | 10.7 / 1.2 / 14 / 246     |
-| [uAgents](https://github.com/fetchai/uAgents)              | support decorates                                                      |                          | fetch.ai     | create agents with simple and expressive decorators                                                                                | 15 / 54          | 0.77 / 0.2 / 22 / 27      |
-| [skyvern](https://github.com/Skyvern-AI/skyvern)           | autonomous<br />multimodal<br />manipulate-browser<br />cloud-friendly | dom + Prompt + image     | skyvern      | interact with websites using browser automation<br />support to run multiple instances in parallel to automate workflows at scale | 93 / 14          | 5.4 / 0.39 / 3 / 15       |
-|                                                         |                                                                        |                          |              |                                                                                                                                     |                  |                           |
-|                                                         |                                                                        |                          |              |                                                                                                                                     |                  |                           |
+| Project                                                 | TAG                                                                    | driven method                                                                                                               | supported by | recommend reason                                                                                                                    | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | autonomous                                                             | prompt                                                                                                                      | AutoGPT      | autonomously accomplish minor tasks<br />thriving ui / cli ecosystem                                                                | 40 / 722         | 164 / 43.4 / 17 / 50      |
+| [aiwaves-cn/agents](https://github.com/aiwaves-cn/agents)  | autonomous                                                             | loss and backpropogation                                                                                                    | AIWaves      | Agent symbolic learning                                                                                                             | 5 / 22           | 4.8 / 0.37 / 1 / 32       |
+| [crewAI](https://github.com/joaomdmoura/crewAI)            | persistent<br />multi-agent<br />tool-create<br />complex task solving | prompt + predefine task[metadata](https://github.com/joaomdmoura/crewAI/blob/main/src/crewai/cli/templates/config/agents.yaml) | crewAI       | enable AI agents like a well-oiled crew                                                                                            | 47 / 98          | 16.8 / 2.3 / 44 / 412     |
+| [llama-agents](https://github.com/run-llama/llama-agents)  | multi-agent<br />async-first<br />cloud-friendly                       | message queue                                                                                                               | llama-index  | async-first framework for building multi-agent systems,<br />allowing for higher throughput and scalability.                       | 48 / 6           | 0.79 / 0.061 / 4 / 16     |
+| [MemGPT](https://github.com/cpacker/MemGPT)                | long-term memory/state                                                 | predefined prompt                                                                                                           | community    | Create agents with long-term memory and custom tools                                                                               | 24 / 27          | 10.7 / 1.2 / 14 / 246     |
+| [uAgents](https://github.com/fetchai/uAgents)              | support decorates<br />cryptographically secured<br />async            | mail to every agents                                                                                                        | fetch.ai     | most secure agent framework<br />create agents with simple and expressive decorators                                               | 15 / 54          | 0.77 / 0.2 / 22 / 27      |
+| [skyvern](https://github.com/Skyvern-AI/skyvern)           | autonomous<br />multimodal<br />manipulate-browser<br />cloud-friendly | dom + Prompt + image                                                                                                        | skyvern      | interact with websites using browser automation<br />support to run multiple instances in parallel to automate workflows at scale | 93 / 14          | 5.4 / 0.39 / 3 / 15       |
 
 # programmer agent
 
@@ -136,11 +189,9 @@ key features:
 - access control
 - rich toolkits
 
-
 key benchmark:
 
 - concurrent execution time (scheduled)
-
 
 | Project                                      | TAG                                                               | driven method                                                                                                                           | supported by | recommend reason                                                                                                                          | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
 | -------------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
