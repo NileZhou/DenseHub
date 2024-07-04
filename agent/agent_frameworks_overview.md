@@ -122,13 +122,14 @@ key features:
 - keep track
 - support local files
 
-| framework                                                    | TAG                                                                                        | driven method | supported by | recommend reason                                                                                                                     | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------- | ------------------------- |
-| [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | autonomous<br />support-scraping<br />keep track<br />support local files<br />multi-agent |               | community    | solve the infinite loop problems by<br />can generate whole research report<br />agents are divided into planner and execution ones. | 40 / 52          | 13 / 1.6 / 9 / 29         |
+| framework                                                    | TAG                                                                                                   | driven method | supported by | recommend reason                                                                                                                                   | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | autonomous<br />async<br />support scraping<br />keep track<br />support local files<br />multi-agent |               | community    | solve the infinite loop problems by[plan-and-solve](https://arxiv.org/pdf/2305.04091) and parallelize works<br />can generate whole research report | 40 / 52          | 13 / 1.6 / 9 / 29         |
 
 # agent as OS
 
 key features:
+
 
 | Project                                      | TAG | driven method | supported by | recommend reason       | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
 | -------------------------------------------- | --- | ------------- | ------------ | ---------------------- | ---------------- | ------------------------- |
