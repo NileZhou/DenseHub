@@ -26,9 +26,7 @@ Perception -> Planning -> Action
 
 1. ReAct(Reason + Act):
 
-   Actions
-
-Reasoning Traces <--> LM <--------------> Env
+Reasoning Traces <--> LM <--(Actions then Observation)--> Env
 
     Observations
 
@@ -64,7 +62,6 @@ Factors to consider during the retrieval process:
 3. interprete to code then execute
 
 ![code](image/code.png)
-
 
 a. Interpreter the user question to code snippets, then:
 
@@ -199,7 +196,6 @@ key benchmark:
 # Embodied Agent
 
 key features:
-
 
 | Project | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
 | ------- | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
