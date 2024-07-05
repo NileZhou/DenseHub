@@ -28,7 +28,6 @@ Perception -> Planning -> Action
 
 Reasoning Traces <--> LM <--(Actions then Observation)--> Env
 
-    Observations
 
 2. Plan and Execute ReAct:
 
