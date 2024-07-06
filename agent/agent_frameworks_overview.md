@@ -28,7 +28,6 @@ Perception -> Planning -> Action
 
 Reasoning Traces <--> LM <--(Actions then Observation)--> Env
 
-
 2. Plan and Execute ReAct:
 
 Divide user request to:
@@ -119,15 +118,14 @@ c. all interpreter to python code then execute
 
 # autonomous agent framework
 
-| Project                                                 | TAG                                                                    | driven method                                                                                                               | supported by | recommend reason                                                                                                                    | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| ------------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
-| [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | autonomous                                                             | prompt                                                                                                                      | AutoGPT      | autonomously accomplish minor tasks<br />thriving ui / cli ecosystem                                                                | 40 / 722         | 164 / 43.4 / 17 / 50      |
-| [aiwaves-cn/agents](https://github.com/aiwaves-cn/agents)  | autonomous                                                             | loss and backpropogation                                                                                                    | AIWaves      | Agent symbolic learning                                                                                                             | 5 / 22           | 4.8 / 0.37 / 1 / 32       |
-| [crewAI](https://github.com/joaomdmoura/crewAI)            | persistent<br />multi-agent<br />tool-create<br />complex task solving | prompt + predefine task[metadata](https://github.com/joaomdmoura/crewAI/blob/main/src/crewai/cli/templates/config/agents.yaml) | crewAI       | enable AI agents like a well-oiled crew                                                                                            | 47 / 98          | 16.8 / 2.3 / 44 / 412     |
-| [llama-agents](https://github.com/run-llama/llama-agents)  | multi-agent<br />async-first<br />cloud-friendly                       | message queue                                                                                                               | llama-index  | async-first framework for building multi-agent systems,<br />allowing for higher throughput and scalability.                       | 48 / 6           | 0.79 / 0.061 / 4 / 16     |
-| [MemGPT](https://github.com/cpacker/MemGPT)                | long-term memory/state                                                 | predefined prompt                                                                                                           | community    | Create agents with long-term memory and custom tools                                                                               | 24 / 27          | 10.7 / 1.2 / 14 / 246     |
-| [uAgents](https://github.com/fetchai/uAgents)              | support decorates<br />cryptographically secured<br />async            | mail to every agents                                                                                                        | fetch.ai     | most secure agent framework<br />create agents with simple and expressive decorators                                               | 15 / 54          | 0.77 / 0.2 / 22 / 27      |
-| [skyvern](https://github.com/Skyvern-AI/skyvern)           | autonomous<br />multimodal<br />manipulate-browser<br />cloud-friendly | dom + Prompt + image                                                                                                        | skyvern      | interact with websites using browser automation<br />support to run multiple instances in parallel to automate workflows at scale | 93 / 14          | 5.4 / 0.39 / 3 / 15       |
+| Project                                                 | TAG                                                                    | driven method                                                                                                               | supported by | recommend reason                                                                                              | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | autonomous                                                             | prompt                                                                                                                      | AutoGPT      | autonomously accomplish minor tasks<br />thriving ui / cli ecosystem                                          | 40 / 722         | 164 / 43.4 / 17 / 50      |
+| [aiwaves-cn/agents](https://github.com/aiwaves-cn/agents)  | autonomous                                                             | loss and backpropogation                                                                                                    | AIWaves      | Agent symbolic learning                                                                                       | 5 / 22           | 4.8 / 0.37 / 1 / 32       |
+| [crewAI](https://github.com/joaomdmoura/crewAI)            | persistent<br />multi-agent<br />tool-create<br />complex task solving | prompt + predefine task[metadata](https://github.com/joaomdmoura/crewAI/blob/main/src/crewai/cli/templates/config/agents.yaml) | crewAI       | enable AI agents like a well-oiled crew                                                                      | 47 / 98          | 16.8 / 2.3 / 44 / 412     |
+| [llama-agents](https://github.com/run-llama/llama-agents)  | multi-agent<br />async-first<br />cloud-friendly                       | message queue                                                                                                               | llama-index  | async-first framework for building multi-agent systems,<br />allowing for higher throughput and scalability. | 48 / 6           | 0.79 / 0.061 / 4 / 16     |
+| [MemGPT](https://github.com/cpacker/MemGPT)                | long-term memory/state                                                 | predefined prompt                                                                                                           | community    | Create agents with long-term memory and custom tools                                                         | 24 / 27          | 10.7 / 1.2 / 14 / 246     |
+| [uAgents](https://github.com/fetchai/uAgents)              | support decorates<br />cryptographically secured<br />async            | mail to every agents                                                                                                        | fetch.ai     | most secure agent framework<br />create agents with simple and expressive decorators                         | 15 / 54          | 0.77 / 0.2 / 22 / 27      |
 
 # programmer agent
 
@@ -171,6 +169,48 @@ key features:
 | framework                                                    | TAG                                                                                                   | driven method                              | supported by | recommend reason                                                                                                                                   | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | autonomous<br />async<br />support scraping<br />keep track<br />support local files<br />multi-agent | langgraph (json model) + predefined prompt | community    | solve the infinite loop problems by[plan-and-solve](https://arxiv.org/pdf/2305.04091) and parallelize works<br />can generate whole research report | 40 / 52          | 13 / 1.6 / 9 / 29         |
+
+# UI-focus Agent
+
+
+
+
+## browser-focus agent
+
+key features:
+
+key benchmark:
+
+| Project                                       | TAG                                                                    | driven method        | supported by | recommend reason                                                                                                                    | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| --------------------------------------------- | ---------------------------------------------------------------------- | -------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [skyvern](https://github.com/Skyvern-AI/skyvern) | autonomous<br />multimodal<br />manipulate-browser<br />cloud-friendly | dom + Prompt + image | skyvern      | interact with websites using browser automation<br />support to run multiple instances in parallel to automate workflows at scale | 93 / 14          | 5.4 / 0.39 / 3 / 15       |
+
+## PC-focus agent
+
+key features:
+
+multi-agent
+
+rich skillsets(mouse, keyboard, native-API, copilot)
+
+support custom app-agent
+
+
+key benchmark:
+
+| Project                              | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------ | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
+| [UFO](https://github.com/microsoft/UFO) |     |               | microsoft    |                  | 94 / 13          | 6.4 / 0.77 / 3 / 6        |
+
+## app-focus agent
+
+key features:
+
+key benchmark:
+
+| Project | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------- | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
+|         |     |               |              |                  |                  |                           |
 
 # agent as OS
 
