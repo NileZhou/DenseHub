@@ -1,5 +1,17 @@
-# Speculative Decoding
+# Background
 
+
+key benchmarks:
+
+- Time To First Token(TTFT)
+- Token Generation Rate
+- 
+
+# More
+
+https://github.com/DefTruth/Awesome-LLM-Inference
+
+# Speculative Decoding
 
 # KV Cache Optimization
 
@@ -17,18 +29,20 @@ reference:
 
 https://spaces.ac.cn/archives/10091  (strongly recommend)
 
-
 # Attention Optimization
+
+
+Paged Attention
+
+Flash Attention
+
 
 
 # Batch Inference Strategy
 
-
 # Multi-Iteration Inference Strategy
 
-
 Based on prefix k-v cache reusing
-
 
 # Quantization
 

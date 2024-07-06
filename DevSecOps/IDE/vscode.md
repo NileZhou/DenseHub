@@ -12,12 +12,9 @@
 
 ```
 
-
-
 # MarkDown Visual Editor
 
 Support for editing while preview
-
 
 https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-office&ssr=false#overview
 
@@ -26,3 +23,9 @@ in vscode, press Ctrl + P then input:
 ```
 ext install cweijan.vscode-office
 ```
+
+
+# Usually Shortcut
+
+
+Ctrl + P:  quick search file/directory name, like "Shift Shift" in JB

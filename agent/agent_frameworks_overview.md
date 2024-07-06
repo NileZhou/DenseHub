@@ -172,9 +172,6 @@ key features:
 
 # UI-focus Agent
 
-
-
-
 ## browser-focus agent
 
 key features:
@@ -195,12 +192,13 @@ rich skillsets(mouse, keyboard, native-API, copilot)
 
 support custom app-agent
 
-
 key benchmark:
 
-| Project                              | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| ------------------------------------ | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
-| [UFO](https://github.com/microsoft/UFO) |     |               | microsoft    |                  | 94 / 13          | 6.4 / 0.77 / 3 / 6        |
+| Project                                             | TAG                                             | driven method | supported by | recommend reason                                | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| --------------------------------------------------- | ----------------------------------------------- | ------------- | ------------ | ----------------------------------------------- | ---------------- | ------------------------- |
+| [UFO](https://github.com/microsoft/UFO)                |                                                 |               | microsoft    |                                                 | 94 / 13          | 6.4 / 0.77 / 3 / 6        |
+| [OS-Copilot](https://github.com/OS-Copilot/OS-Copilot) | focus-mode<br />record effort <br />gen-webpage |               | community    |                                                 | 0 / 8            | 1.4 / 0.15 / 3 / 9        |
+| [Cradle](https://github.com/BAAI-Agents/Cradle)        |                                                 |               | BAAI         | first attempt at General Computer Control (GCC) | 15 / 14          | 0.65 / 0.07 / 0 / 1       |
 
 ## app-focus agent
 
@@ -231,6 +229,7 @@ key benchmark:
 | [AIOS](https://github.com/agiresearch/AIOS)     | resource optimize (FIFO, LRU)<br />concurrent<br />access control | prompt + human command                                                                                                                  | community    | LLM as the brain of OS<br />context -- llm kernel -- memory -- storage -- scheduler <br />self-host system calls,<br />see also [OpenAGI: Package for AI Agent creation](https://github.com/agiresearch/OpenAGI?tab=readme-ov-file) | 17 / 20         | 2.9 / 0.3 / 0 / 7         |
 | [MemGPT](https://github.com/cpacker/MemGPT)     | virtual context                                                   | predefined prompt (natural languge)<br />look [system-prompts](https://github.com/cpacker/MemGPT/tree/main/memgpt/prompts/system)         | community    | It manages a virtual context to create unbounded LLM context<br />prompt tokens: [system instructions] + [working context] + [FIFO Queue]                                                                                          | 28 / 90          | 10.7 / 1.2 / 15 / 249     |
 | [phidata](https://github.com/phidatahq/phidata) | rick toolkits<br />multimodal                                     | predefined prompt (natural languge)<br />look [assistant.py](https://github.com/phidatahq/phidata/blob/main/cookbook/llm_os/assistant.py) | phidata      | memory + knowledges + rich tools                                                                                                                                                                                                   | 46 / 37          | 10.5 / 1.5 / 21 / 48      |
+|                                              |                                                                   |                                                                                                                                         |              | using to self-improvement                                                                                                                                                                                                          |                  |                           |
 
 # Embodied Agent
 
