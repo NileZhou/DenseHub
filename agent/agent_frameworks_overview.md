@@ -206,9 +206,11 @@ key features:
 
 key benchmark:
 
-| Project | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| ------- | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
-|         |     |               |              |                  |                  |                           |
+| Project                                           | TAG | driven method | supported by       | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------------------- | --- | ------------- | ------------------ | ---------------- | ---------------- | ------------------------- |
+| [AutoDroid](https://github.com/MobileLLM/AutoDroid)  |     |               | communiy           |                  | 0 / 3            | 0.2 / 0.03 / 1 / 7        |
+| [MoblieAgent](https://github.com/X-PLUG/MobileAgent) |     |               | communiy           |                  | 30 / 5           | 2.3 / 0.2 / 1 / 18        |
+| [AppAgent](https://github.com/mnotgod96/AppAgent)    |     |               | communiy / tencent |                  | 0 / 5            | 4.6 / 0.49 / 5 / 65       |
 
 # agent as OS
 
