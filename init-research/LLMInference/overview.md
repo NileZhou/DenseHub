@@ -1,3 +1,7 @@
+
+
+efficient-learning and inference: https://github.com/horseee/Awesome-Efficient-LLM
+
 # Background
 
 

@@ -176,11 +176,14 @@ key features:
 
 key features:
 
+- support local model
+
 key benchmark:
 
-| Project                                       | TAG                                                                    | driven method        | supported by | recommend reason                                                                                                                    | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| --------------------------------------------- | ---------------------------------------------------------------------- | -------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
-| [skyvern](https://github.com/Skyvern-AI/skyvern) | autonomous<br />multimodal<br />manipulate-browser<br />cloud-friendly | dom + Prompt + image | skyvern      | interact with websites using browser automation<br />support to run multiple instances in parallel to automate workflows at scale | 93 / 14          | 5.4 / 0.39 / 3 / 15       |
+| Project                                         | TAG                                                                    | driven method        | supported by | recommend reason                                                                                                                                                                        | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ----------------------------------------------- | ---------------------------------------------------------------------- | -------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [skyvern](https://github.com/Skyvern-AI/skyvern)   | autonomous<br />multimodal<br />manipulate-browser<br />cloud-friendly | dom + Prompt + image | skyvern      | interact with websites using browser automation<br />support to run multiple instances in parallel to automate workflows at scale<br /><br />can even surpass CAPTCHA Authentication | 93 / 14          | 5.4 / 0.39 / 3 / 15       |
+| [webllama](https://github.com/McGill-NLP/webllama) | support local model                                                    |                      | community    | Their first model[`Llama-3-8B-Web`](https://huggingface.co/McGill-NLP/Llama-3-8B-Web), surpasses GPT-4V (`*`zero-shot) by 18% on [`WebLINX`](https://mcgill-nlp.github.io/weblinx/)    | 3 / 2            | 1.3 / 0.1 / 0 / 3         |
 
 ## PC-focus agent
 
@@ -194,11 +197,14 @@ support custom app-agent
 
 key benchmark:
 
-| Project                                             | TAG                                             | driven method | supported by | recommend reason                                | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| --------------------------------------------------- | ----------------------------------------------- | ------------- | ------------ | ----------------------------------------------- | ---------------- | ------------------------- |
-| [UFO](https://github.com/microsoft/UFO)                |                                                 |               | microsoft    |                                                 | 94 / 13          | 6.4 / 0.77 / 3 / 6        |
-| [OS-Copilot](https://github.com/OS-Copilot/OS-Copilot) | focus-mode<br />record effort <br />gen-webpage |               | community    |                                                 | 0 / 8            | 1.4 / 0.15 / 3 / 9        |
-| [Cradle](https://github.com/BAAI-Agents/Cradle)        |                                                 |               | BAAI         | first attempt at General Computer Control (GCC) | 15 / 14          | 0.65 / 0.07 / 0 / 1       |
+| Project                                                                        | TAG                                             | driven method | supported by     | recommend reason                                                                                                                        | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------------------------------------------------ | ----------------------------------------------- | ------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [UFO](https://github.com/microsoft/UFO)                                           |                                                 |               | microsoft        |                                                                                                                                         | 94 / 13          | 6.4 / 0.77 / 3 / 6        |
+| [OS-Copilot](https://github.com/OS-Copilot/OS-Copilot)                            | focus-mode<br />record effort <br />gen-webpage |               | community        |                                                                                                                                         | 0 / 8            | 1.4 / 0.15 / 3 / 9        |
+| [Cradle](https://github.com/BAAI-Agents/Cradle)                                   |                                                 |               | BAAI             | first attempt at General Computer Control (GCC)                                                                                         | 15 / 14          | 0.65 / 0.07 / 0 / 1       |
+| [ScreenAgent](https://github.com/niuzaisheng/ScreenAgent)                         |                                                 |               | Jilin University | support GPT4-V, LLaVa-1.5, CogAgent                                                                                                     | 4 / 1            | 0.2 / 0.02 / 0 / 16       |
+| [self-operating-computer](https://github.com/OthersideAI/self-operating-computer) |                                                 |               | OthersideAI      | already has product:[link](https://www.hyperwriteai.com/self-operating-computer)                                                           | 0 / 24           | 8.2 / 1.1 / 8 / 54        |
+| [OpenAgents](https://github.com/xlang-ai/OpenAgents)                              |                                                 |               | xlang-ai         | an open platform for using and hosting language agents in the wild of everyday life<br />contains: plugins agent, web agent, data agent | 1 / 16           | 3.7 / 0.4 / 3 / 11        |
 
 ## app-focus agent
 
@@ -237,8 +243,24 @@ key benchmark:
 
 key features:
 
-| Project | TAG | driven method | supported by | recommend reason | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
-| ------- | --- | ------------- | ------------ | ---------------- | ---------------- | ------------------------- |
+- voice-generate
+- persistent
+- vision
+- create 3D-printable parts
+- 
+
+| Project                                 | TAG                                                                       | driven method | supported by | recommend reason                                                                                                          | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| --------------------------------------- | ------------------------------------------------------------------------- | ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [GlaDOS](https://github.com/dnhkng/GlaDOS) | voice-generate<br />persistent<br />vision<br />create 3D-printable parts |               | Valve        | Personality Core for GLaDOS, the first steps towards a real-life implementation of the AI from the Portal series by Valve | 21 / 13          | 2.8 / 0.26 / 1 / 11       |
+
+# Agent Platform
+
+key features:
+
+| Project                                     | TAG | supported by | recommend reason                                                                                                                                                       | C1m/Contributors | Star(k)/Fork(k)/PR/Issues |
+| ------------------------------------------- | --- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ------------------------- |
+| [OSWorld](https://github.com/xlang-ai/OSWorld) |     | xlang-ai     | Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments<br /><br />can also test expected time and budget cost, around 10 - 30h, 100$ around | 17 / 18          | 1 / 0.12 / 0 / 4          |
+|                                             |     |              |                                                                                                                                                                        |                  |                           |
 
 # *AIGC-centric software architecture
 
@@ -250,3 +272,8 @@ key features:
 | ------------------------------------------------ | ----------- | ------------ | ---------------------------------------------------------------------------- | ---------------- | ------------------------- |
 | [unit-mesh](https://github.com/unit-mesh/unit-mesh) | distributed | community    | AIGC-centric distributed software architecture<br />unit are generated by AI | 0 / 3            | 0.18 / 0.02 / 0 / 0       |
 |                                                  |             |              |                                                                              |                  |                           |
+
+# *Embodied Hardware
+
+OpenGlass - Open Source Smart Glasses [Github](https://github.com/BasedHardware/OpenGlass)
+Turn any glasses into hackable smart glasses with less than $25 of off-the-shelf components
