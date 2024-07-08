@@ -1,28 +1,5 @@
 In the academic communit, research of agent can be divided into:
 
-- RL-based Agent
-  - Instruction following
-  - Language as knowledge
-  - World model
-  - LLM as tool
-  - Generalization ability
-  - Continual learning
-  - RL + LLM
-  - Trajectory to language
-  - Trajectory predication
-  - Others
-- LLM-based Agent
-  - multimodal
-  - General Reasoning & planning & Tool using
-  - 
-  - Task-specific
-  - Multi-Agent cooperation
-  - Experimental analysis
-  - Benchmark & Dataset
-  - Application
-  - Algorithm design
-  - Others
-- 
 
 references:
 
@@ -47,10 +24,6 @@ embodied agent history:
 
 reference: Building Cooperative Embodied Agents Modularly with Large Language Models (ICLR2024)
 
-
-
-
-
 # Multi-Agent cooperation
 
 https://arxiv.org/pdf/2309.15943
@@ -62,6 +35,12 @@ https://www.swebench.com/
 # LLM-Based OS
 
 https://github.com/samholt/l2mac
+
+# Cost control
+
+
+[AI Agents That Matter](https://arxiv.org/abs/2407.01502): 2024-07-01
+
 
 # Key features of a embodied-agent
 

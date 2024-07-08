@@ -1,9 +1,8 @@
-
-
-
 聊天消息分话题聚类后再做RAG，然后构建history会比较好
 
 开源项目:
+
+- quivr(most popular) [link](https://github.com/QuivrHQ/quivr)
 
 * LLaMA Index [https://github.com/run-llama/llama_index?tab=readme-ov-file](https://github.com/run-llama/llama_index?tab=readme-ov-file)
 * RAGFlow [https://github.com/infiniflow/ragflow](https://github.com/infiniflow/ragflow)
@@ -21,7 +20,8 @@ RAG目前存在的问题：
 
 
 
-# Graph-based (recommend)
 
+
+# Graph-based (recommend)
 
 [GraphRAG](https://github.com/microsoft/graphrag)
