@@ -16,9 +16,6 @@ zhihu: [https://zhuanlan.zhihu.com/p/636784644](https://zhuanlan.zhihu.com/p/636
 
 注意 `additional_special_tokens`，似乎是可以对special token进行动态扩展的?
 
-```python
-
-```
 
 ## Chat Template
 
