@@ -21,7 +21,7 @@ zhihu: [https://zhuanlan.zhihu.com/p/636784644](https://zhuanlan.zhihu.com/p/636
 
 jinja2语法:
 
-```text
+
 {% for message in messages %}
 {% if message['role'] == 'user' %}
 {{ '<|user|>
@@ -37,7 +37,7 @@ jinja2语法:
 {{ '<|assistant|>' }}
 {% endif %}
 {% endfor %}
-```
+
 
 ## 模型结构与计算过程
 

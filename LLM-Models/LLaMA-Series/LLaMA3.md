@@ -16,7 +16,6 @@
 
 jinja2语法:
 
-```python
 {% set loop_messages = messages %}
 
 {% for message in loop_messages %}
@@ -33,7 +32,7 @@ jinja2语法:
 {% if add_generation_prompt %}
 {{ '<|start_header_id|>assistant<|end_header_id|>' }}
 {% endif %}
-```
+
 
 ## 模型结构与计算过程
 
