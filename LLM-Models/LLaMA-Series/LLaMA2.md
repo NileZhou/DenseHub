@@ -24,7 +24,7 @@ zhihu: [https://zhuanlan.zhihu.com/p/636784644](https://zhuanlan.zhihu.com/p/636
 
 jinja2语法:
 
-```bash
+```
 {% for message in messages %}
 {% if message['role'] == 'user' %}
 {{ '<|user|>
