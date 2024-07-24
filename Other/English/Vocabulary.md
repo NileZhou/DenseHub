@@ -17,3 +17,11 @@ divine 神圣的
 Mycenaeans 迈锡尼人，BC 1600征服过希腊，骁勇善战
 
 subjugate v. 征服
+
+a **craving for** chocolate  对巧克力成瘾。
+
+craving n. 瘾
+
+I'm blown away  我感到震惊。  “Blown away” 是一个短语，表示对某事感到非常惊讶或印象深刻。
+
+avsersity n. 逆境

@@ -1,9 +1,6 @@
-
-
 efficient-learning and inference: https://github.com/horseee/Awesome-Efficient-LLM
 
 # Background
-
 
 key benchmarks:
 
@@ -35,11 +32,14 @@ https://spaces.ac.cn/archives/10091  (strongly recommend)
 
 # Attention Optimization
 
-
 Paged Attention
 
 Flash Attention
 
+
+sparse attention (speedup in prefilling stage):
+
+https://github.com/microsoft/MInference   
 
 
 # Batch Inference Strategy

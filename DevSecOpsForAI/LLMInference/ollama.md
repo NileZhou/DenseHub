@@ -2,6 +2,9 @@ run ollama:
 
 ```shell
 
+# customize the model directories
+export OLLAMA_MODELS=/home/llm/.ollama/models
+
 # use 0.0.0.0 rather than localhost, otherwise other device in same LAN cant access it
 OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS=* ollama serve
 
@@ -9,8 +12,8 @@ OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS=* ollama serve
 OLLAMA_DEBUG="1" OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS=* ollama serve
 ```
 
-
 PS: all args in 'ollama serve':
+
 ```go
     envVars["OLLAMA_DEBUG"],
     envVars["OLLAMA_HOST"],
@@ -28,10 +31,7 @@ PS: all args in 'ollama serve':
 
 ```
 
-
-
-
-stop ollama:
+# stop ollama:
 
 ```shell
 sudo systemctl stop ollama.service
@@ -44,10 +44,16 @@ show models:
 ollama list
 ```
 
+# update client
+
 update ollama (when run some latest models but get error):
 
+first stop the ollama
+
 ```shell
-curl https://ollama.ai/install.sh | sh
+# pre-release
+curl https://ollama.com/install.sh | sed 's#https://ollama.com/download#https://github.com/jmorganca/ollama/releases/download/v0.2.6#' | sh
+curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 access by OPENAI-Compatible API:
@@ -96,3 +102,78 @@ $ export OPENAI_API_KEY='ollama'
 # with aider
 $ docker run -it --volume $(pwd):/app paulgauthier/aider --openai-api-key $OPENAI_API_KEY
 ```
+
+# Vision model API
+
+use the vision model:
+
+- in cli:
+
+```
+$ ollama run llava-llama3:8b-v1.1-fp16
+>>> extract text from img and notice keep indent and newline: ./Downloads/github-img-8.png
+Added image './Downloads/github-img-8.png'
+demo package
+
+Module contents
+------------------
+
+class demo . foo ("a" class demo_base) : object Some headers line Variables: Somevar - some text some detailed 
+docstring demo .Somevar = j Documentation for this variable
+```
+
+- in python client (need ollama version >= 0.2.6)
+
+```python
+import base64
+from openai import OpenAI
+
+
+def encode_image(image_path):
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
+
+
+client = OpenAI(
+    base_url = 'http://localhost:11434/v1',
+    api_key = 'ollama',  # required, but unused
+)
+
+base64_image = encode_image("/home/llm/Downloads/github-img-8.png")
+
+response = client.chat.completions.create(
+    model = "llava-llama3:8b-v1.1-fp16",
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "extract text from img and notice keep indent and newline"
+                },
+                {
+                  "type": "image_url",
+                  "image_url": {
+                    "url": f"data:image/jpeg;base64,{base64_image}",
+                  },
+                }
+            ],
+        }
+    ]
+)
+
+print(response.choices[0].message.content)
+```
+
+# the model files location
+
+~/.ollama/models
+
+or
+
+/usr/share/ollama/.ollama/models
+
+# backend
+
+llama.cpp
