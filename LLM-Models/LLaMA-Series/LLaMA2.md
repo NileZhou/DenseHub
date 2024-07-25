@@ -19,8 +19,9 @@ zhihu: [https://zhuanlan.zhihu.com/p/636784644](https://zhuanlan.zhihu.com/p/636
 
 ## Chat Template
 
-jinja2语法:
+jinja2语法: 注意这里的{%raw%}和{%endraw%}要去掉
 
+{% raw %}
 
 {% for message in messages %}
 {% if message['role'] == 'user' %}
@@ -38,6 +39,7 @@ jinja2语法:
 {% endif %}
 {% endfor %}
 
+{% endraw %}
 
 ## 模型结构与计算过程
 

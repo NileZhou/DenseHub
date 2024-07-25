@@ -4,6 +4,21 @@ Key-ML-Models: [https://github.com/dair-ai/ML-Papers-Explained](https://github.c
 
 
 
+# Model Architecture
+
+
+## Dense
+
+- Transformer: Decoder-Only
+- Mamba-2
+- Jamba
+- TTT
+- RWKV
+
+## MoE
+
+
+- Mistral
 
 
 # Chat Model

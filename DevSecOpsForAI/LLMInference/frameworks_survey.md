@@ -36,14 +36,10 @@ Support Feature:
 - Compatible with OpenAI API
 - seamless integration with huggingface models
 
-
-
 Advantage:
 
 - easy to use
 - support Nvidia CUDA / AMD ROCm / AWS Neuron / CPU
-
-
 
 Disadvantages:
 
@@ -62,20 +58,18 @@ additional:
 
 - exl2 quantization: based on the same optimization method as GPTQ and supports 2, 3, 4, 5, 6 and 8-bit quantization, mixed with in a model.
 
+# lmdeploy
+
+
 # NVIDA/TensorRT-LLM
 
 Former version: FasterTransformer
 
-
 It use optimize-compiled LLM rather than origin LLM weight to inference, so faster than vLLM.
-
-
 
 applicable senarios:
 
 - 10 - 60 user requests, within GPU
-
-
 
 Look also: https://github.com/NVIDIA/TensorRT: support vast range of different ml models, not only llms
 
@@ -90,10 +84,6 @@ Core tech:
 applicable scenatios:
 
 - support vast range of different ml models, not only llms
-
-
-
-
 
 # microsoft/DeepSpeed-MII (almost dead)
 
