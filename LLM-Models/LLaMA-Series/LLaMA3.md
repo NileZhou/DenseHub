@@ -14,14 +14,16 @@
 
 参考: [https://llama.meta.com/docs/model-cards-and-prompt-formats/meta-llama-3/](https://llama.meta.com/docs/model-cards-and-prompt-formats/meta-llama-3/)
 
-jinja2语法:
+jinja2语法: 注意{%raw%} 和 {%endraw%} 要去掉
+
+{%raw%}
 
 {% set loop_messages = messages %}
 
 {% for message in loop_messages %}
-{% set content = '<|start_header_id|>' 
+{% set content = '<|start_header_id|>'
       + message['role'] + '<|end_header_id|>'
-      + message['content'] | trim + '<|eot_id|>' 
+      + message['content'] | trim + '<|eot_id|>'
 %}
 {% if loop.index0 == 0 %}
 {% set content = bos_token + content %}
@@ -33,6 +35,7 @@ jinja2语法:
 {{ '<|start_header_id|>assistant<|end_header_id|>' }}
 {% endif %}
 
+{%endraw%}
 
 ## 模型结构与计算过程
 
@@ -164,7 +167,6 @@ https://github.com/meta-llama/llama-recipes
 行代表当前计算的目标token，列代表可关联信息的token
 
 # Total Architecture
-
 
 编辑: [feishu](https://aimqq0022gd.feishu.cn/wiki/YZ0mwL7Oyi0295kawpfchbrcnqd?wiki_all_space_view_source=space_sidebar&fromScene=spaceOverview)
 
