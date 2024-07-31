@@ -6,6 +6,8 @@
 这是因为copy respository 的时候走的是https协议而不是ssh key走的ssh协议
 [参考](https://zhuanlan.zhihu.com/p/339964630)
 
+
+
 ## push被拒绝
 
 ### 1 命令不对
