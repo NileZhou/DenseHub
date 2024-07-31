@@ -1,10 +1,8 @@
-# elif
+# SweBench
 
-# Task
+Task: Provided with the issue text and a codebase snapshot, models generate a patch that is evaluated against real tests.
 
-Provided with the issue text and a codebase snapshot, models generate a patch that is evaluated against real tests.
-
-# Data
+## Data
 
 swe-bench-train:
 
@@ -86,7 +84,17 @@ data explain:
 }
 ```
 
-# Framework
+## Projects
+
+- [swe-bench/experiments](https://github.com/swe-bench/experiments): Contains other submission logs
+- [SWE-bench](https://github.com/princeton-nlp/SWE-bench/tree/main): now it contains containerized solution
+
+https://github.com/princeton-nlp/SWE-bench/blob/main/docs/20240627_docker/README.md
+
+- [OpenDevin/OD-SWE-bench](https://github.com/OpenDevin/OD-SWE-bench): The solution of OpenDevin
+- 
+
+## Framework
 
 - framework for evaluation with ability for continuously update the benchmark with new instances
 
@@ -98,3 +106,25 @@ These repositories are:
 |                                               |      |                           |
 
 set up:
+
+# r2e
+
+
+[R2E: Turning any **GitHub** Repository into a Programming Agent Environment](https://github.com/r2e-project/r2e)
+
+
+# AgentBench
+
+browser + software operations
+
+# AgentDojo
+
+hacker test
+
+# ResearchArena
+
+reserach agent
+
+# TravelPlanner
+
+travel plan

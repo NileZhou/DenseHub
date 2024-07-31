@@ -1,3 +1,15 @@
+# CodeCopilot-related
+
+
+## Inference Optimization
+
+
+- [Let the Code LLM Edit Itself When You Edit the Code](https://arxiv.org/abs/2407.03157)
+From Bytedance MarsCode Team. Only rebuild the k-v cache of code block which user want to edit, decrease the prefill cost to 15% compare to origin, while maintaining 95%+ performance (be suspicious)
+
+
+
+
 # single-agent
 
 Executable Code Actions Elicit Better LLM Agents
@@ -29,16 +41,11 @@ A Survey on Integration of Large Language Models with Intelligent Robots   https
 
 Self-Organized Agents: A LLM Multi-Agent Framework toward Ultra Large-Scale Code Generation and Optimization   https://arxiv.org/pdf/2404.02183v1
 
-
-
 ## aider
-
 
 ```
 aider --model gpt-4o-mini
 ```
-
-
 
 # Most Related
 

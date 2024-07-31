@@ -13,6 +13,7 @@ more complete: [quchangle/LLM-Tool-Survey](https://github.com/quchangle1/LLM-Too
 | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------ |
 | [AnyTool: Self-Reflective, Hierarchical Agents for Large-Scale API Calls](https://arxiv.org/abs/2402.04253)     | [code](https://github.com/dyabel/AnyTool?tab=readme-ov-file) | *[Yu Du](https://arxiv.org/search/cs?searchtype=author&query=Du,+Y), [Fangyun Wei](https://arxiv.org/search/cs?searchtype=author&query=Wei,+F)*        | 2024-02-06 | Massive API Selection, tools are organized as hierarchy tree |
 | [ToolNet: Connecting Large Language Models with Massive Tools via Tool Graph](https://arxiv.org/abs/2403.00839) |                                                           | *[Xukun Liu](https://arxiv.org/search/cs?searchtype=author&query=Liu,+X), [Zhiyuan Peng](https://arxiv.org/search/cs?searchtype=author&query=Peng,+Z)* | 2024-02-29 | Massive API Selection, tools are organized as graph         |
+|                                                                                                              |                                                           |                                                                                                                                                    |            |                                                              |
 
 # Tool Calling
 
@@ -23,13 +24,7 @@ more complete: [quchangle/LLM-Tool-Survey](https://github.com/quchangle1/LLM-Too
 
 # Response Generation
 
-
-
-
 # Advanced topics
-
-
-
 
 # Tools in programmatic contexts
 
@@ -157,6 +152,7 @@ data:
 | [APIBank](https://github.com/AlibabaResearch/DAMO-ConvAI/blob/main/api-bank/data/all_apis.csv) | en       | 429/79        | 429/79      | 429/79      |
 | [ToolAlpaca](https://github.com/tangqiaoyu/ToolAlpaca/blob/main/data/train_data.json)          | en       | 5911/198      | 5911/198    | 5803/198    |
 | ToolLuban                                                                                   | zh       | 10239/234     | 10239/234   | 5605/185    |
+| [MetaTool](https://github.com/HowieHwong/MetaTool?tab=readme-ov-file)                          | en       |               |             |             |
 
 - Tool Retrieval：
   - data structure：<query, api_name, api_desc>

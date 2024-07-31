@@ -25,3 +25,169 @@ craving n. 瘾
 I'm blown away  我感到震惊。  “Blown away” 是一个短语，表示对某事感到非常惊讶或印象深刻。
 
 avsersity n. 逆境
+
+I have to fine you. 我必须得罚你款
+
+deluded: 被迷惑的；被蒙骗的。He was **deluded** into thinking he could win the lottery
+
+sneakers
+
+clotheslines.
+
+goggles
+
+pajama bottoms
+
+pajama top
+
+zipper
+
+buckle
+
+purse
+
+hair bow
+
+sandals
+
+barrette
+
+cauliflower
+
+onions
+
+cabbage
+
+broccoli
+
+treats    零食；美味小吃；款待
+
+pantry  
+
+spices
+
+pasta
+
+omelet
+
+snack box
+
+bedside table
+
+oatmeal 
+
+cereal
+
+den
+
+scoot  scooter
+
+snuggle  v.
+
+beanbag n. 豆袋椅
+
+curtain
+
+wardrobe
+
+washing machine
+
+cabinets
+
+cozy place
+
+chimney
+
+bathtub
+
+faucet
+
+sink
+
+toilet
+
+potted plant
+
+cushion  
+
+tiara
+
+spiky tail
+
+marbles
+
+fire engine
+
+jigsaw puzzle
+
+rubber duck
+
+paintbrushes
+
+scale
+
+kettle
+
+vegetable peeler
+
+dishwashing liquid
+
+sponges
+
+dish towel
+
+fork
+
+plate
+
+spoon
+
+colander
+
+mop
+
+dustpan and brush
+
+jars  jug  mug
+
+whisk
+
+chopping board
+
+toaster
+
+grater
+
+frying pan
+
+set the table
+
+parakeet
+
+hamster
+
+guinea pig： 豚鼠
+
+spinach leaves: 菠菜叶
+
+petal
+
+ladybug
+
+lawn mower
+
+dig soil
+
+water the plants
+
+mow the lawn
+
+sweep up leaves
+
+fern
+
+toddler
+
+adolescent
+
+hazel
