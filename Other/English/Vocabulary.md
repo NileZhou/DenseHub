@@ -30,17 +30,17 @@ I have to fine you. 我必须得罚你款
 
 deluded: 被迷惑的；被蒙骗的。He was **deluded** into thinking he could win the lottery
 
-sneakers
+sneakers 运动鞋
 
-clotheslines.
+clotheslines. 晾衣线
 
-goggles
+goggles 游泳镜
 
-pajama bottoms
+pajama bottoms  睡裤
 
-pajama top
+pajama top  睡衣
 
-zipper
+zipper 
 
 buckle
 
@@ -62,7 +62,7 @@ broccoli
 
 treats    零食；美味小吃；款待
 
-pantry  
+pantry
 
 spices
 
@@ -74,7 +74,7 @@ snack box
 
 bedside table
 
-oatmeal 
+oatmeal
 
 cereal
 
@@ -108,7 +108,7 @@ toilet
 
 potted plant
 
-cushion  
+cushion
 
 tiara
 

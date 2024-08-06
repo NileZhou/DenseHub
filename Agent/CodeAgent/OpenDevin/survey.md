@@ -18,6 +18,17 @@ docker run
     -p 3000:3000
     ghcr.io/opendevin/opendevin:main
 
+
+
+# run in local
+
+make build
+
+make setup-config
+
+make run
+
+
 # paper explained
 
 ## features
@@ -38,11 +49,6 @@ The challenges of building a software-driven agent:
 
 system architecture:
 https://docs.all-hands.dev/modules/usage/architecture
-
-
-
-
-
 
 ```
 docker run --runtime nvidia --gpus all \

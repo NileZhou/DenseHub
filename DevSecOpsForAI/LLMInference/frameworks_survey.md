@@ -1,3 +1,10 @@
+# Recommend for career
+
+
+My purpose: achieve inference frameworks + agent. Then a pure-python framework might be helpful for me.
+
+The algorithm is same in all frameworks.
+
 # General Common Sense
 
 model precision choose
@@ -59,7 +66,6 @@ additional:
 - exl2 quantization: based on the same optimization method as GPTQ and supports 2, 3, 4, 5, 6 and 8-bit quantization, mixed with in a model.
 
 # lmdeploy
-
 
 # NVIDA/TensorRT-LLM
 
