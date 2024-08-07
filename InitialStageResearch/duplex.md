@@ -5,3 +5,7 @@ Google Duplex: 支持打断
 解读:
 
 [https://www.woshipm.com/ai/1022152.html](https://www.woshipm.com/ai/1022152.html)
+
+
+
+ModelArchitecture: [Language Model Can Listen While Speaking](https://arxiv.org/abs/2408.02622)

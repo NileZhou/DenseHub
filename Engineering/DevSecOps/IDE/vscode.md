@@ -1,3 +1,7 @@
+-
+
+search for help: [vscode_docs](https://code.visualstudio.com/docs/editor/codebasics)
+
 # General Settings
 
 1. Ctrl + Shift + P
@@ -24,8 +28,15 @@ in vscode, press Ctrl + P then input:
 ext install cweijan.vscode-office
 ```
 
-
 # Usually Shortcut
 
-
 Ctrl + P:  quick search file/directory name, like "Shift Shift" in JB
+
+# Autosave
+
+```
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+}
+```

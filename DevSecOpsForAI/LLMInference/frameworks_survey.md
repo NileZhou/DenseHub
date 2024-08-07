@@ -5,6 +5,8 @@ My purpose: achieve inference frameworks + agent. Then a pure-python framework m
 
 The algorithm is same in all frameworks.
 
+I will use SGLang mainly, then vLLM + learn cuda from andrej 
+
 # General Common Sense
 
 model precision choose

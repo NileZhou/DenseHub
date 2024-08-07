@@ -18,3 +18,7 @@ https://www.zhihu.com/question/26570985/answer/3465784970
 
 
 https://github.com/karpathy/llm.c: LLM training in simple, raw C/CUDA
+
+
+
+https://github.com/flashinfer-ai/flashinfer : sglang用的cuda kernel
