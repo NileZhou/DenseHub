@@ -29,7 +29,7 @@ an AI-powered mod of VSCode
 
 ## Execution-procedure
 
-![img](./imgs/lifecycle_single_agent_query.png)
+![img](../../_imgs/lifecycle_single_agent_query.png)
 
 ## Highlight
 - multi-agent framework
@@ -110,7 +110,7 @@ paper: [AutoCodeRover: Autonomous Program Improvement](https://arxiv.org/abs/240
 
 ## workflow  
 
-![img](./imgs/autocoderover-workflow.png)
+![img](../../_imgs/autocoderover-workflow.png)
 
 
 
@@ -120,7 +120,7 @@ paper: [AutoCodeRover: Autonomous Program Improvement](https://arxiv.org/abs/240
 
 paper: [How to Understand Whole Software Repository?](https://arxiv.org/abs/2406.01422)
 
-workflow: [img](./imgs/workflow.png)  
+workflow: [img](../../_imgs/workflow.png)  
 
 1. Repository Knowledge Graph: RepoUnderstander first condenses critical repository information into a repository knowledge graph. This graph represents the hierarchical structure of the repository, reducing the complexity and making the vast amounts of data more manageable.
 
@@ -139,7 +139,7 @@ Paper: [Agentless: Demystifying LLM-based Software Engineering Agents](https://a
 
 Localization & Repairing.  
 Localization is the same as aider.  
-repairing:  ![img](./imgs/agentless-repairing.png)
+repairing:  ![img](../../_imgs/agentless-repairing.png)
 
 generate multiple diff patch, then reranking & voting.  
 
