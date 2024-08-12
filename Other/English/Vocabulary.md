@@ -191,3 +191,5 @@ toddler
 adolescent
 
 hazel
+
+agnostic adj. 中立的，平台无关的(IT领域中用法)

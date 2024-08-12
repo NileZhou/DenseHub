@@ -37,3 +37,5 @@ Notice:
 Emphasize the importance of input instead of output.
 
 After learn something / be familiar with something, then try to output using our own words
+
+
