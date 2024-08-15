@@ -1,5 +1,3 @@
--
-
 search for help: [vscode_docs](https://code.visualstudio.com/docs/editor/codebasics)
 
 # General Settings
@@ -27,6 +25,11 @@ in vscode, press Ctrl + P then input:
 ```
 ext install cweijan.vscode-office
 ```
+
+# Markdown All in One
+
+
+ext install yzhang.markdown-all-in-one
 
 # Usually Shortcut
 
