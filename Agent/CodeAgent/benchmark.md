@@ -84,6 +84,15 @@ data explain:
 }
 ```
 
+
+## SweBench-verified
+
+
+https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified
+
+
+
+
 ## Projects
 
 - [swe-bench/experiments](https://github.com/swe-bench/experiments): Contains other submission logs
@@ -109,9 +118,7 @@ set up:
 
 # r2e
 
-
 [R2E: Turning any **GitHub** Repository into a Programming Agent Environment](https://github.com/r2e-project/r2e)
-
 
 # AgentBench
 

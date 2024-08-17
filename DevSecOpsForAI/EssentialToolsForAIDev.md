@@ -9,3 +9,9 @@ pip install sentencepiece huggingface_hub
 pip install autoawq bitsandbytes optimum auto-gptq exllamav2
 pip install ray
 ```
+
+
+
+IDE plugin :
+
+- [TabbyML/tabby](https://github.com/TabbyML/tabby?tab=readme-ov-file): Self-hosted AI coding assistant

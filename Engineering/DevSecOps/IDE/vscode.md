@@ -1,5 +1,11 @@
 search for help: [vscode_docs](https://code.visualstudio.com/docs/editor/codebasics)
 
+
+# usage
+
+
+find/lookup file through file name: ctrl + p
+
 # General Settings
 
 1. Ctrl + Shift + P
@@ -27,7 +33,6 @@ ext install cweijan.vscode-office
 ```
 
 # Markdown All in One
-
 
 ext install yzhang.markdown-all-in-one
 

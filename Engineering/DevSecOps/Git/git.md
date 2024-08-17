@@ -87,17 +87,15 @@ git config --global user.email <邮箱, 和远程一样>
 
 # 给分支设置新上游
 
-
 需求: 我在Github上把别人的项目A  fork 到了自己的空间，变为B，然后clone B到本地
         怎么才能在本地将A的更新同步到B，并拉取到本地呢?
-
 
 1. 设置Upstream Repository
    进入本地仓库的根目录，然后使用以下命令：
 
    git remote add upstream [原项目A的仓库URL]
 
-   eg: git remote add upstream https://github.com/original_owner/projectA.git
+   eg: git remote add upstream git@github.com:thirdgerb/ghostiss.git
 2. 获取上游仓库的更新
 
    git fetch upstream
@@ -109,13 +107,10 @@ git config --global user.email <邮箱, 和远程一样>
    git checkout master  # 或者 git checkout main，取决于你的主分支名称
 4. 将更新合并到你的本地分支
 
-    git merge upstream/<A项目的目标分支>
-
+   git merge upstream/<A项目的目标分支>
 5. 推送更新到你的GitHub仓库（B）
 
    git push origin master  # 或者 git push origin main
-
-
 
 # 分支暂存
 

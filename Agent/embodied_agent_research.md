@@ -1,7 +1,4 @@
-
-
 # Manipulate the digital world
-
 
 close source app:
 
@@ -24,9 +21,6 @@ UI测试自动化:
 
 理论上我们基于以上工具和方案就能实现目标，我将会在 “实践” 部分分析和实践具体的技术选型
 
-
-
-
 open source projects:
 
 * screenshot2Code
@@ -34,3 +28,8 @@ open source projects:
 从截图到代码
 
 [https://github.com/abi/screenshot-to-code](https://github.com/abi/screenshot-to-code)
+
+
+paper list:
+
+[https://github.com/HCPLab-SYSU/Embodied_AI_Paper_List](https://github.com/HCPLab-SYSU/Embodied_AI_Paper_List)
