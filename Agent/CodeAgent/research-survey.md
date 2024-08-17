@@ -1,4 +1,3 @@
-
 - [History](#history)
 - [CodeCopilot-related](#codecopilot-related)
   - [Inference Optimization](#inference-optimization)
@@ -7,22 +6,12 @@
   - [aider](#aider)
 - [Most Related](#most-related)
 
-
-
-
-
-
 # CodeCopilot-related
-
 
 ## Inference Optimization
 
-
 - [Let the Code LLM Edit Itself When You Edit the Code](https://arxiv.org/abs/2407.03157)
-From Bytedance MarsCode Team. Only rebuild the k-v cache of code block which user want to edit, decrease the prefill cost to 15% compare to origin, while maintaining 95%+ performance (be suspicious)
-
-
-
+  From Bytedance MarsCode Team. Only rebuild the k-v cache of code block which user want to edit, decrease the prefill cost to 15% compare to origin, while maintaining 95%+ performance (be suspicious)
 
 # single-agent
 
