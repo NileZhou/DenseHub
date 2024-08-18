@@ -1,7 +1,7 @@
 # 通用
 
-
 ## 创建shortcup (ubuntu)
+
 PyCharm can create it's own launcher icon (but it's not created by default).
 
 All you have to do is:
@@ -11,8 +11,7 @@ All you have to do is:
 3. Tick the corresponding box if you want the launcher for all users.
 4. If you selected "Create entry for all users", you will be asked for your password.
 5. You should then be able to find PyCharm in the Unity Dash or pin it to the launcher.
-Note: You may need a system restart before it appears.
-
+   Note: You may need a system restart before it appears.
 
 ## 快捷键
 
@@ -27,6 +26,17 @@ Note: You may need a system restart before it appears.
 Windows: 【Ctrl】+【Alt】+【Left】
 
 Linux: 【Alt】+【Shift】+【Left】
+
+
+一个文件内：expand / folding code
+
+ubuntu:
+
+expand:【ctrl】+【shift】+【+】
+
+collapse:【ctrl】+【shift】+【-】
+
+
 
 ## 问题修复
 
