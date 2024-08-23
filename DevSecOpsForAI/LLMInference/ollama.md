@@ -12,6 +12,8 @@ OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS=* ollama serve
 OLLAMA_DEBUG="1" OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS=* ollama serve
 ```
 
+now, the path of models is located in: /usr/share/ollama/.ollama/models
+
 PS: all args in 'ollama serve':
 
 ```go
@@ -30,6 +32,14 @@ PS: all args in 'ollama serve':
     envVars["OLLAMA_MAX_VRAM"],
 
 ```
+
+# update ollama
+
+sudo vim /etc/systemd/system/ollama.service
+
+sudo systemctl daemon-reload
+
+sudo systemctl restart ollama
 
 # stop ollama:
 
@@ -174,6 +184,18 @@ or
 
 /usr/share/ollama/.ollama/models
 
+# template
+
+
+we can see template of models in ollama: eg: https://ollama.com/library/llama3.1:latest/blobs/11ce4ee3e170
+
+
 # backend
 
 llama.cpp
+
+# frontend
+
+## NextChat
+
+![image](_imgs/next-chat.png)

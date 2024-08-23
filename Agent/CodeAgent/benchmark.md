@@ -84,11 +84,16 @@ data explain:
 }
 ```
 
-
 ## SweBench-verified
 
-
 https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified
+
+
+though:
+
+
+<pre><br/><br/><span>1. </span>Localize<span>（定位问题文件）</span>:<br/><br/>    a. <span>看</span>repository<span>的项目文档，这里可能有</span>repository<span>的目录结构描述，可建立初步认知。<br/></span><span></span>b. <span>如果</span>issue<span>里有错误堆栈，则根据堆栈来找<br/></span><span></span>c. <span>如果</span>issue<span>里有某些重要关键词，则会在</span>repository<span>里全局搜索其出现位置，再语义筛查一遍后确立着手点<br/></span><span>    如果文档或</span>issue<span>里没有关键线索，那就用费力些的方法</span>:<br/>    d. <span>先用</span>MCTS<span>的方法，从一级目录开始找，找到整个程序的入口<br/></span><span></span>e. <span>从程序入口处，找到关键入口，然后调用</span>go to definition<span>，或者</span>find subclass / implementation<span>方法</span>, <span>或者</span>find reference<span>方法，用逻辑建立认知 </span>(<span>这三个方法你可以假设我都能实现出来，给</span>LLM<span>用</span>)<span>，每块代码可以维护一个</span>note<span>用来积累这些认知<br/></span><span></span>f. <span>寻找问题代码，可以用代码分析工具辅助<br/></span><span></span>- * <span>符号执行工具可以帮助分析程序在各种输入情况下的行为，从而定位可能的</span>bug<span>和问题代码区域。这种技术通过抽象程序中的实际变量为符号值，来模拟程序执行路径，有助于揭示隐藏的错误和异常。<br/></span><span></span>- * <span>数据流分析，通过跟踪程序中变量的流向，可以帮助确定变量的定义和使用情况，从而揭示潜在的数据相关错误。<br/></span><span></span>- lint<span>工具<br/></span><span></span>g. <span>找到候选可疑文件，想办法复现</span>issue<br/><br/><br/><span>2. </span>Repair<span>（修复问题）</span>:<br/><br/><span>修复问题通常需要理解问题的本质并编写相应的修复代码。这里可以通过自动化的代码建议系统来辅助开发者生成潜在的修复补丁。<br/></span><span>重要的是要确保所提出的解决方案不仅解决了当前的问题，还要保持代码的整体一致性和可维护性。可以考虑引入代码风格和质量检查工具自动评估提出的修复方案。<br/></span><span><br/></span><span>3. </span>Verify<span>（验证修复效果）</span>:<br/><br/><span>验证修复是否成功是必不可少的步骤，包括编写和执行针对新修复的测试用例，以及重新运行既有的测试用例确保修复没有引入新的问题。<br/></span><span>可以利用持续集成（</span>CI<span>）工具自动化这一流程，每次提交后自动运行测试，并提供反馈。如果修复引入了新的问题，系统应能快速定位并通知开发者。<br/></span><span><br/></span><span><br/></span><span>数据结构辅助</span>:<br/><span>1. </span><span>动态知识图谱。当一个新的</span>issue<span>被提交时，系统可以实时地从相关代码库中抽取信息，构建或更新局部知识图谱。这样做可以减少存储需求，同时保证信息的实时性和相关性。<br/></span><span>2. * </span><span>增量解析树：利用</span> tree-sitter<span>，可以构建一个全局的、增量更新的解析树，这个树可以随时更新和维护代码结构的改变<br/></span><span>3. </span><span>反向索引： 对于搜索和导航功能，建立一个反向索引（类似于搜索引擎中使用的）可以极大提高效率。这个索引可以包括关键词到文件位置的映射，可以是基于文本的，也可以是基于符号的（例如，变量名、函数名等）<br/></span><span>4. </span><span>全局的关系图： 描述文件之间的依赖关系、符号的定义和使用等。这种结构有助于实现</span> goto_definition <span>和</span> find_usage <span>等功能。<br/></span><span>5. </span><span>缓存和元数据存储： 建立有效的缓存机制和元数据存储是必需的，与</span>RAG<span>机制结合构建语义代码搜索引擎<br/></span><span><br/></span></pre>
+
 
 
 

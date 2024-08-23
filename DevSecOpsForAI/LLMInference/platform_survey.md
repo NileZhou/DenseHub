@@ -1,4 +1,4 @@
 
 
 
-![platforms](./imgs/platforms.png)
+![platforms](./_imgs/platforms.png)
