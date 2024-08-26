@@ -1,13 +1,8 @@
 Submission Number: 6739
 
-
-
 Article Title: “Masker: Speculative Decoding for Long-Text QA with CopyHead”
 
-
-
 Authors: Yi Zhou, Haixia Pan, Ruijun Liu, Lingzhi Zhang
-
 
 # Reviwer1
 
@@ -25,11 +20,9 @@ Furthermore, our research specifically focuses on accelerating text generation. 
 
 We hope this clarifies the distinct focus of our work and its contributions to the acceleration of text generation.
 
-
 ### Author action
 
 We updated the manuscript by including a reference to the significant contribution of Pointer Networks in the Introduction section.
-
 
 ## Concern2
 
@@ -46,18 +39,24 @@ Thank you for your constructive suggestion. We understand the importance of prov
 We will revise the figure captions, including a clear definition of "prefix input embedding" in Figure 1, and ensure that all figures have standalone captions that describe their content at a high level.
 
 
+## Concern3
+
+
+### Author response
+
+
+### Author action
+
+
+
 
 # Reviewer2
 
 ## Concern1
 
-
 # Reviewer3
 
 ## Concern1
 
-
 Author response:
 Author action: We updated the manuscript by ….
-
-

@@ -1,8 +1,6 @@
 search for help: [vscode_docs](https://code.visualstudio.com/docs/editor/codebasics)
 
-
 # usage
-
 
 find/lookup file through file name: ctrl + p
 
@@ -19,6 +17,40 @@ find/lookup file through file name: ctrl + p
 }
 
 ```
+
+# Shortcuts settings
+
+
+1. Ctrl+Shift+P
+2. input: Preferences: Open Keyboard Shortcuts (JSON)  then press return
+3. edit the keybindings.json:
+
+```
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "shift+alt+left",
+        "command": "workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "-workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    }
+]
+```
+
 
 # MarkDown Visual Editor
 
