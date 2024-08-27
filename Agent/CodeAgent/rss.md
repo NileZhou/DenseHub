@@ -15,11 +15,30 @@ LLM powered coding
 
 
 
+
+
 # Must follow website
 
-
+https://consensus.app/search/
 | website                                               | desc                                                 |
 | ----------------------------------------------------- | ---------------------------------------------------- |
 | [huggingface daily paper](https://huggingface.co/papers) | top k hot papers of the day in huggingface community |
 | [arxiv-cs-CL](https://rss.arxiv.org/rss/cs.CL)           | Computation Language category papers in arxiv RSS    |
-|                                                       |                                                      |
+|                                                      |                                                      |
+
+
+
+
+
+# Must follow community
+
+
+
+
+
+
+
+
+
+
+
