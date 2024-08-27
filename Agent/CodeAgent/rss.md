@@ -15,8 +15,6 @@ LLM powered coding
 
 
 
-
-
 # Must follow website
 
 https://consensus.app/search/
