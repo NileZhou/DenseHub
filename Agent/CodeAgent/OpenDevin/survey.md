@@ -18,8 +18,6 @@ docker run
     -p 3000:3000
     ghcr.io/opendevin/opendevin:main
 
-
-
 # run in local
 
 make build
@@ -28,12 +26,11 @@ make setup-config
 
 make run
 
-
 # paper explained
 
 ## features
 
-- event stream
+- event stream (all run are asynchronized)
 
 ## Insight
 
@@ -59,3 +56,11 @@ docker run --runtime nvidia --gpus all \
   vllm/vllm-openai:latest \
   --model hugging-quants/Meta-Llama-3.1-8B-Instruct-GPTQ-INT4
 ```
+
+
+# code learn
+
+
+- execute under the hood:
+
+openhands/runtime/client/client.py
