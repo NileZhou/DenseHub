@@ -114,8 +114,22 @@ jetbrains IDE里修改:
 
 把Alt+Shift+Left/Right 改为 Ctrl+Alt+Left/Right
 
-# VLC
+# Add desktop shortcut
 
-播放器
+1. add or edit .desktop file:
+vim ~/.local/share/applications/<target_app_name>.desktop 
+```shell
+[Desktop Entry]
+Name=<app>
+Exec=<target-app-start-path>
+Type=Application
+Terminal=false
+Icon=<target-app-icon-path>
+Categories=Utility;Application;
+```
 
-# xmind
+2. fresh the app menu 
+
+update-desktop-database ~/.local/share/applications/
+
+

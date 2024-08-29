@@ -18,6 +18,13 @@ find/lookup file through file name: ctrl + p
 
 ```
 
+# bitter lesson
+Don't use the extension:   
+**Office Viewer (Markdown Editor)**
+
+It will cause data loss in some conditions.
+
+
 # Shortcuts settings
 
 
