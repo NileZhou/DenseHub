@@ -21,7 +21,7 @@ All you have to do is:
 
 根据对应操作系统，看到对应快捷键
 
-![Untitled](imgs/nav-back.png)
+![Untitled](./_imgs/nav-back.png)
 
 Windows: 【Ctrl】+【Alt】+【Left】
 
@@ -102,4 +102,4 @@ Python主要是动态类型，所以会比较麻烦，有一些查找代码的�
 
 ## JSON 缩进
 
-![Untitled](imgs/json-indent.png)
+![Untitled](./_imgs/json-indent.png)

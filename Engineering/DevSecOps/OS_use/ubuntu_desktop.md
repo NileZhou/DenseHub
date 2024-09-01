@@ -133,3 +133,5 @@ Categories=Utility;Application;
 update-desktop-database ~/.local/share/applications/
 
 
+
+PS: sometimes the name of app usually change itself, so we need a sh file to match the file then execute it
