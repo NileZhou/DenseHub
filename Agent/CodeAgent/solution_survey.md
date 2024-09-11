@@ -306,3 +306,32 @@ codify human behavior
 1. context window, related information rag + agentic maintance prompt --> long horizon task
 2. human behavior easily scrape, small context window, can verify automatically --> codify human behaviour to a model
 3. a model can handle complex task --> develop more complex software / kindom --> AI + human explore  --> experience --> high level to slow level transfer --> model --> model--next level --> model-architecture level
+
+
+
+
+
+# Cursor
+
+
+
+
+
+
+
+# GPT Engineer
+
+
+
+
+
+
+
+# Replit Agent
+
+
+
+
+
+
+

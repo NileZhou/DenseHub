@@ -23,6 +23,12 @@ Give AI remote access to the development environment, with the ability to see li
 
 
 
+# Client-Code
+
+In my local computer, it's 2023.5 version of cursor
+
+
+
 # Design Criteria
 
 

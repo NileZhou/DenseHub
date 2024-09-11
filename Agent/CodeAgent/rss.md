@@ -42,19 +42,22 @@ https://consensus.app/search/
 
 
 
-# Must follow CodeAgent blog
+# Must follow CodeAgent/IDE blog
 
 
 
 | Blog                                                         | Desc                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [zackproser](https://zackproser.com/blog)                    | An information aggregation site about AI-IDE                 |
 | [cosine_blog](https://cosine.sh/blog)                        | Blog of cosine Genie -- sota AI Engineer, codify human behavior, AI Engineer model |
+| [magic_blog](https://magic.dev/blog)                         | Blog of Magic -- LTM-2 Model                                 |
 | [cursor_blog](https://www.cursor.com/blog)                   | Blog of cursor -- a great way to code with AI                |
 | [zed_ai](https://zed.dev/blog/repl)                          | Blog of Zed -- a powerful open source editor with local AI, faster than cursor.  Written in Rust |
 | [gpt_engineer](https://gptengineer.app/)                     | Create the best experience for rapid prototyping [news](https://lovable.dev/news/). [docs](https://docs.gptengineer.app/), now it foucus on creating website |
 | [Amazon Q_Blog](https://aws.amazon.com/blogs/machine-learning/category/amazon-q/) | Blog of Amazon Q, a generative AI-powered assistant for software development developed by AWS |
 | [aide_blog](https://aide.dev/blog)                           | Blog of aide -- a great ai code editor                       |
-|                                                              |                                                              |
+| [avante.nvim](https://github.com/yetone/avante.nvim)         | Use Neovim like using cursor AI IDE, it also implement the select/apply function |
+| [replit-agent_blog](https://blog.replit.com/)                | Blog of repli: a plaotform to develop MVP app very fastly    |
 
 # Must follow community
 

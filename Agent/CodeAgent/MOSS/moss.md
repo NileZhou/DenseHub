@@ -41,3 +41,39 @@ life cycle:
 session -> process -> task
 
 一个process下有个root task，然后哦其它task都是父子关系的进程树
+
+
+
+
+
+
+
+
+
+# workflow 深水区
+
+1. debug问题, 动态代码->静态代码，人类可介入
+2. 每个节点idempotent 幂等的问题
+
+
+
+
+
+# Paper thought:
+
+1. Module即容器，共享进程内context
+
+2. Ioc
+
+解决的问题都是: Agent写出来，且运行的代码要影响自己框架的代码
+
+moss is a shell, ghost 就算是一个OS的进程管理
+
+
+
+全异步好处: 
+
+1. 并行计算
+2. 增加交互体验
+3. 主动推送
+

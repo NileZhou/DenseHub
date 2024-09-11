@@ -33,13 +33,18 @@ PS: all args in 'ollama serve':
 
 ```
 
-# update ollama
+# update ollama settings
 
+```shell
 sudo vim /etc/systemd/system/ollama.service
 
-sudo systemctl daemon-reload
+# notice: replace the user from 'ollama' to '<current user>', otherwise it might can not connect to ollama app after execute next two commands:
 
+sudo systemctl daemon-reload
 sudo systemctl restart ollama
+```
+
+
 
 # stop ollama:
 
@@ -61,12 +66,13 @@ update ollama (when run some latest models but get error):
 first stop the ollama
 
 ```shell
-# pre-release
-curl https://ollama.com/install.sh | sed 's#https://ollama.com/download#https://github.com/jmorganca/ollama/releases/download/v0.2.6#' | sh
-curl -fsSL https://ollama.com/install.sh | sh
+# replace the version to target version
+curl https://ollama.com/install.sh | sed 's#https://ollama.com/download#https://github.com/jmorganca/ollama/releases/download/v0.3.10#' | sh
 ```
 
 access by OPENAI-Compatible API:
+
+
 
 # stream API
 
@@ -89,7 +95,7 @@ POST method:
 curl http://localhost:11434/v1/chat/completions \
     -H "Content-Type: application/json" \
     -d '{
-        "model": "llama3",
+        "model": "llama3.1:8b",
         "messages": [
             {
                 "role": "system",

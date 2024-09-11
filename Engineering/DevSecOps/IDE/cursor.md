@@ -2,6 +2,10 @@
 
 
 
+Ctrl + P: search file, like 【shift】 【shift】 in jetbrains
+
+Ctrl + Shift + P: input command
+
 Ctrl + L: Open the chat tab
 
 Ctrl + , : Open vscode settings
@@ -12,7 +16,7 @@ Ctrl + I: Open chat with Composer
 
 Ctrl + Shift + I: Open Composer page
 
-
+Hover on a file/function/class/var name, then 【F2】: refactor it's name
 
 
 
