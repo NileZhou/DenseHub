@@ -23,7 +23,7 @@ For example, $suf_3$ represents $(s_3, s_4, ..., s_{n-1})$
 
 Suffix Array, abbreviated as SA.
 
-List all the suffixes of of $s$ (a total of $n$), they are $suf_0, suf_1, \ldots, suf_{n-1}$ .
+List all the suffixes of $s$ (a total of $n$), they are $suf_0, suf_1, \ldots, suf_{n-1}$ .
 
 First, sort all these suffixes in lexicographical order (given the same prefix, no-character is the smallest; otherwise, sort according to the underlying encoding of the characters).
 
