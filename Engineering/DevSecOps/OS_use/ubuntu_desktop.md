@@ -55,6 +55,18 @@ Name the command as you like it, e.g. flameshot. And in the command insert:
 
  `/usr/bin/flameshot gui` Then custom the shortkut keys.
 
+
+
+# screen recorder
+
+start recorder: Ctrl + Shift + Alt + R
+
+end recorder: Ctrl + Shift + Alt + R
+
+
+
+
+
 # webcam driver 安装
 
 这里以Logitech C270hd为例

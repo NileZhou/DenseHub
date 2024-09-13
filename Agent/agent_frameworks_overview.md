@@ -292,3 +292,17 @@ key features:
 
 OpenGlass - Open Source Smart Glasses [Github](https://github.com/BasedHardware/OpenGlass)
 Turn any glasses into hackable smart glasses with less than $25 of off-the-shelf components
+
+
+
+# Prgramming Language
+
+| Project                                                    | desc                                                         |      | star (k) |
+| ---------------------------------------------------------- | ------------------------------------------------------------ | ---- | -------- |
+| [ell](https://github.com/MadcowD/ell)                      | A language model programming framework.                      |      | 1        |
+| [appl](https://github.com/appl-team/appl)                  | A Prompt Programming Language                                |      | 0.06     |
+| [lmql](https://github.com/eth-sri/lmql?tab=readme-ov-file) | A language for constraint-guided and efficient LLM programming |      | 3.6      |
+| [marsha](https://github.com/alantech/marsha)               | a functional, higher-level, English-based programming language that gets compiled into tested Python software by an LLM |      | 0.46     |
+
+
+
