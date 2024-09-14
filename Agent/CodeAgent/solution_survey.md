@@ -329,8 +329,19 @@ codify human behavior
 
 # Replit Agent
 
+It still need coding, but provide a lot of templates for users to develop their own sites.
+
+# websim.ai
+
+https://websim.ai/c/nao3VCWUhHLyytgnq
+create a website(contains frontend) in 10s, don't need to code
 
 
+
+# wordware.ai
+https://www.wordware.ai/
+
+Build your AI apps 20x faster with Natural Language Programming
 
 
 

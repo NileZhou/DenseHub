@@ -100,3 +100,23 @@ arXiv，也可以引用，没问题的。
 
 
 #
+
+
+开始写作:
+
+
+# Title
+
+A SOLID implementation powereed turning-complete and self-evolving agent
+
+
+# Abstract
+
+
+
+
+# Introduction
+
+# Related Work
+
+# Method
