@@ -8,3 +8,16 @@ https://www.youtube.com/watch?v=QXVzmzhxWWc
 
 课本上的哪些英语语法已经过时了？ - 魏剑峰的回答 - 知乎
 https://www.zhihu.com/question/27037537/answer/2711801159
+
+
+
+
+
+# 中英互译
+
+
+
+- why DebugAgentFnResult is an ordinary class, 而 Moss是个abc类
+
+Why is `DebugAgentFnResult` a regular class, whereas `Moss` is an abstract base class?
+
