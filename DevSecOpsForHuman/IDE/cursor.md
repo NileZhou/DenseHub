@@ -20,11 +20,48 @@ Hover on a file/function/class/var name, then 【F2】: refactor it's name
 
 
 
+# Ignore files
+
+
+
+put .cursorignore on the root level of project
+
+then edit it like .gitignore
+
+
+
 # Shadow Workspace
 
 open the vscode settings, then check the box
 
 ![shadow](./_imgs/shadow-workspace.png)
+
+
+
+
+
+# Composer
+
+
+
+
+
+# Tips
+
+
+
+- Always create a new project in an empty folder
+- When express demand, be explicit, but not too much explicit
+- Let it write readme at first, be a long term memory
+- Write NL outline while programming
+- Using git to manage versions. When at some success **checkpoint**, add commit. 
+- Ctrl + I start composer to write something, using '**save all**' firstly, rather than 'accept all'. because if cursor failed, we can reject all
+- Using @codebase.
+- @<frequent QA doc links>
+- Rules for AI, like system prompt. Set my perference for programming and language
+- Delete account then register, avoid paying for premium.
+
+# Extensions
 
 
 
