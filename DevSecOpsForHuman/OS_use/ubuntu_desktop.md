@@ -147,3 +147,22 @@ update-desktop-database ~/.local/share/applications/
 
 
 PS: sometimes the name of app usually change itself, so we need a sh file to match the file then execute it
+
+
+
+
+
+# Press [ok] while installing
+
+press [tab] firstly, then we can press 'ok'
+
+
+
+
+
+
+
+
+
+
+
