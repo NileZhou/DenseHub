@@ -29,7 +29,7 @@ $$
 假设seq_len=4, n=100(原本为10000,为pow的base). d=4(词向量长度)
 
 
-![Untitled](images/Untitled.png)
+![Untitled](_imgs/Untitled.png)
 
 
 第0行从左到右: 变化很快，代表这个正弦曲线频率比较高
@@ -42,10 +42,10 @@ $$
 
 
 
-![Untitled](images/Untitled1.png)
+![Untitled](_imgs/Untitled1.png)
 
 
 PE有很多种，transformer选择这种是因为作者看上了它的 “$PE_{pos+k}$ 可以表示为$PE_{pos}$的线性相关函数的形式” 这个特点
 
 
-![Untitled](images/Untitled2.png)
+![Untitled](_imgs/Untitled2.png)

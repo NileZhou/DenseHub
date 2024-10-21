@@ -3,6 +3,12 @@ reference:
 - https://github.com/liguodongiot/llm-action  (大模型原理与实战，大而全)
 - 
 
+
+# KV Cache
+
+![kv-cache](_imgs/kv-cache.gif)
+
+
 # Train中常见问题
 
 ## Loss问题汇总
