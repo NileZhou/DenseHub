@@ -35,7 +35,7 @@ $ tmux kill-session -t <session-name>
 
 状态栏:
 
-![status-bar](imgs/status-bar.png)
+![status-bar](_imgs/status-bar.png)
 
 在某个session里时，
 

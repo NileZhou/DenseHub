@@ -48,7 +48,7 @@ c. replan
 
 1. memory stream
 
-![memory_stream](image/memory_stream.png)
+![memory_stream](_imgs/memory_stream.png)
 
 All agents records are stored in a memory stream, then retrieve them when needed, then write/read the memory stream persistently
 
@@ -61,11 +61,11 @@ Factors to consider during the retrieval process:
 
 2. role-based, graph-based automaton
 
-![graph-based](image/graph-based.png)
+![graph-based](_imgs/graph-based.png)
 
 3. interprete to code then execute
 
-![code](image/code.png)
+![code](_imgs/code.png)
 
 a. Interpreter the user question to code snippets, then:
 
@@ -169,6 +169,7 @@ key-benchmarks:
 | 2023-04-02  | [aider](https://github.com/paul-gauthier/aider)              | all-in-terminal                           | community     | multiple-files edit + git management + codding/debug + Q/A,<br />like a real pair programmer | 268 / 31         | 12.7 / 1.2 / 13 / 77      |
 | 2024-06-09  | [claude-dev](https://github.com/saoudrizwan/claude-dev)      | create whole project<br /><br />IDE Agent | community     | reading & writing files<br />creating projects<br />executing terminal commands with your permission | 61 / 1           | 0.2 / 0.01 /              |
 | 2024-02-11  | [vision-agent](https://github.com/landing-ai/vision-agent)   | vision-task<br />meta-task                | landing-ai    | code-driven<br />lots of vision tools<br />can handle complex vision task (gen code from image) | 34 / 14          | 1.1 / 0.1 / 5 /1          |
+| 2024-06-07  | [bolt.new](https://github.com/stackblitz/bolt.new)           | create a full-stack web app               | community     | Prompt, run, edit, and deploy full-stack web applications    | 13 / 14          | 5.7                       |
 
 # research agent
 
@@ -226,6 +227,8 @@ key benchmark:
 | [ScreenAgent](https://github.com/niuzaisheng/ScreenAgent)    |                                                 |               | Jilin University | support GPT4-V, LLaVa-1.5, CogAgent                          | 4 / 1            | 0.2 / 0.02 / 0 / 16       |
 | [self-operating-computer](https://github.com/OthersideAI/self-operating-computer) |                                                 |               | OthersideAI      | already has product:[link](https://www.hyperwriteai.com/self-operating-computer) | 0 / 24           | 8.2 / 1.1 / 8 / 54        |
 | [OpenAgents](https://github.com/xlang-ai/OpenAgents)         |                                                 |               | xlang-ai         | an open platform for using and hosting language agents in the wild of everyday life<br />contains: plugins agent, web agent, data agent | 1 / 16           | 3.7 / 0.4 / 3 / 11        |
+| [OmniParser](https://github.com/microsoft/OmniParser)         |                                                 |               | microsoft         | screen parsing tool for pure vision based GUI Agent | 1 / 2           | 0.5 / 0.04 / 0.01 / 0.01        |
+
 
 ## app-focus agent
 

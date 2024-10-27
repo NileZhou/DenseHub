@@ -9,6 +9,14 @@ reference:
 ![kv-cache](_imgs/kv-cache.gif)
 
 
+prompt-cache in deepseek: https://api-docs.deepseek.com/news/news0802/
+once hit the cache:
+1. latency from 13s cutted to 500ms (128k prompt with high inference)
+2. cost cutted to 10% of origin mode
+
+
+
+
 # Train中常见问题
 
 ## Loss问题汇总

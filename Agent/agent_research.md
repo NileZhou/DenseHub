@@ -13,13 +13,13 @@ https://zhuanlan.zhihu.com/p/665644399
 
 The prompt architecture:
 
-![LLM_For_Robotics](image/LLM4Robotics.png)
+![LLM_For_Robotics](_imgs/LLM4Robotics.png)
 
 disadvantage: can't create action
 
 embodied agent history:
 
-![history](image/embodiedAgentHistory.png)
+![history](_imgs/embodiedAgentHistory.png)
 
 reference: Building Cooperative Embodied Agents Modularly with Large Language Models (ICLR2024)
 
