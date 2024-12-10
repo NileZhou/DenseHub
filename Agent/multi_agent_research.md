@@ -15,6 +15,9 @@ Paper list of multi-agent reinforcement learning:
 https://github.com/LantaoYu/MARL-Papers
 
 
+https://github.com/kyegomez/awesome-multi-agent-papers
+
+
 agent-paper-list:
 
 https://github.com/AGI-Edgerunners/LLM-Agents-Papers

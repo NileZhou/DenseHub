@@ -141,3 +141,8 @@ I want you to act as a spoken English teacher and improver. I will speak to you 
 
 ```
 
+
+
+Words:
+- Seer: n. 先知, 预言家
+- pivotal adj. 关键的，核心的
