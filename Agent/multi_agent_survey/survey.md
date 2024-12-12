@@ -65,7 +65,5 @@ Aiming to explore potential social dynamics and propagation
 
 ### Game Simulation
 
-
-
 # Datasets and Benchmarks
 

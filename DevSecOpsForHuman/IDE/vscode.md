@@ -18,6 +18,10 @@ find/lookup file through file name: ctrl + p
 
 ```
 
+# Extensions
+
+
+
 # bitter lesson
 Don't use the extension:   
 **Office Viewer (Markdown Editor)**
