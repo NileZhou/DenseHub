@@ -146,3 +146,14 @@ I want you to act as a spoken English teacher and improver. I will speak to you 
 Words:
 - Seer: n. 先知, 预言家
 - pivotal adj. 关键的，核心的
+- holistic adj. 全面的，综合的
+- conduits n. 水管，通道，导管
+- dissemination n. 传播
+- nuance n. 细微差别
+- progressively adv. 慢慢地，逐步地
+
+
+Multi-agent通信范式：
+- hierarchical
+- parallel
+- nested
