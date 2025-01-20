@@ -1,8 +1,15 @@
 search for help: [vscode_docs](https://code.visualstudio.com/docs/editor/codebasics)
 
-# usage
+# Usually Shortcut
 
-find/lookup file through file name: ctrl + p
+## windows
+Ctrl + P:  quick search file/directory name, like "Shift Shift" in JB
+
+
+## mac
+Shift + option + F: beautify code
+Command + J: show/hide bottom panel
+
 
 # General Settings
 
@@ -79,9 +86,6 @@ ext install cweijan.vscode-office
 
 ext install yzhang.markdown-all-in-one
 
-# Usually Shortcut
-
-Ctrl + P:  quick search file/directory name, like "Shift Shift" in JB
 
 # Autosave
 

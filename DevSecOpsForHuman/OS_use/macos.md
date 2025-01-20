@@ -18,3 +18,17 @@ macOS官方使用手册:
 截图并复制到clipboard: <control> + <command> + <shift> + 4
 关闭当前窗口，但不退出: <command> + w
 关闭并退出当前窗口: <command> + q
+
+
+## Calendar
+
+add chinese holiday:   
+![img](./_imgs/calendar.png)
+
+Choose 【New Calendar Subscription】   
+输入:   
+webcal://p10-calendars.icloud.com/holiday/CN_zh.ics
+
+reference:
+other holiday of the world:
+https://www.ius7.com/a/388

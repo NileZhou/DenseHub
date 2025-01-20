@@ -16,6 +16,20 @@ Linux下开发常用命令:
 
 UNIX的哲学: 一切皆文件
 
+
+
+```shell
+# linux下，假如我现在在位置path_a，cd到了位置path_b，怎么快速切回path_a?
+# - 是一个特殊参数，表示“上一个工作目录”
+cd -
+```
+
+
+
+
+
+
+
 ## 目录结构FHS
 
 **Filesystem Hierarchy Standard (FHS)** : 文件系统结构层次，是一种描述UNIX操作系统布局的参考，由Linux基金会维护，目前版本是2015年发布的3.0
@@ -28,17 +42,7 @@ UNIX的哲学: 一切皆文件
 | [kernels](https://en.wikipedia.org/wiki/Kernel_(operating_system)), [initrd](https://en.wikipedia.org/wiki/Initrd) |                                                              |
 | /dev                                                         | 设备文件，如磁盘等设备                                       |
 | /etc                                                         | 放全局范围的配置文件，全称为"Editable Text Configuration" 或 "Extended Tool Chest"。 |
-
-此外还可能有
-• /etc/opt: 存在/opt中的插件包的配置
-• /etc/sgml: 处理SGML的程序的配置
-• /etc/X11: X Window System, version 11的配置
-• /etc/xml: 处理XML程序的配置 |
-| /home | 用户个人目录，包含用户保存的文件、用户个人设置等 |
-| /lib<qual>:
-
-/lib
-/lib64 (可能有) | /bin和/sbin的二进制程序所使用到的库文件 |
+|/lib64 (可能有) | /bin和/sbin的二进制程序所使用到的库文件 |
 | /media | 可移除的媒体设备(如CD-ROMS)的挂载点 |
 | /mnt | 临时被挂载的文件系统 |
 | /opt | 存放插件类应用软件(optional可选应用包，一般是直接提供二进制程序的非开源包) |
@@ -209,8 +213,6 @@ Cron表达式中的每个域都支持一定数量的特殊字符，每个特殊�
 | **/**        | 指定数值的增量                               | 在分钟域中，**3/20**表示从第3分钟开始，每20分钟。            |
 | **?**        | 不指定值，仅日期和星期域支持该字符           | 当日期或星期域其中之一被指定了值以后，为避免冲突，需要将另一个域的值设为 **?** |
 | **L**        | 表示最后一天(Last)，仅日期和星期域支持该字符 |                                                              |
-
-**注: 指定L字符时，避免指定列表或范围，否则会导致逻辑问题**
  | • 在日期域中，**L**表示某个月的最后一天。在星期域中，**L**表示一个星期的最后一天，也就是星期日（**SUN**）。
 • 如果在**L**前有具体的内容，例如，在星期域中的**6L**表示这个月的最后一个星期六 |
 | **W** | 工作日(weekday)，在离指定日期的最近的有效工作日触发事件。**W**字符寻找最近有效工作日时不会跨过当前月份，连用字符**LW**时表示为指定月份的最后一个工作日 | 在日期域中**5W**，如果5日是星期六，则将在最近的工作日星期五，即4日触发。如果5日是星期天，则将在最近的工作日星期一，即6日触发；如果5日在星期一到星期五中的一天，则就在5日触发。 |
@@ -356,7 +358,15 @@ df
 df -i    # 打印出来inodes的使用情况，如果Linux文件系统中小文件特别多则会导致inode不够用
 df -aT   # 列出一些隐藏系统的磁盘
 df -h    # 以human能看得懂的形式(自动选择单位)进行输出，而默认的输出大小都是以KB为单位的
+df -hi   # 查看各个目录inode使用情况(小文件太多也会导致[Errno 122] Disk quota exceeded )
 ```
+
+排查哪些目录占用磁盘/inode太多:
+```shell
+ncdu -x <目标目录>
+```
+- ncdu 默认只显示磁盘空间大小，但在左下角有 n 选项切换到 基于文件数量（Number of items）模式，能够帮助你迅速找出拥有最多小文件的目录。
+- 然后你可以按回车键逐层进入目录查看，找到具体文件海量的地方。
 
 ## du
 
@@ -374,6 +384,9 @@ du -sh /* # 查看根目录下各文件夹大小,  -s代表看目录总大小而
 # 最佳实践: 查看某个目录下各个一级文件/目录的大小
 du -h --max-depth=1 ./
 ```
+
+
+
 
 ## fdisk
 
@@ -457,12 +470,15 @@ $ gio open <path>
 
 ## 查看当前操作系统版本和版本号
 
-```go
-# 查看发行版
-cat /etc/issue
+```shell
+# 查看发行版(但这命令经常失效)
+lsb_release -a
 
 # 查看内核版本
 cat /proc/version
+
+# 查看系统
+uname -a
 ```
 
 ## 查看文件夹的sha1sum值
@@ -797,3 +813,17 @@ $ ps -p $$ # $$代表当前shell进程的进程ID
 在线shell编程环境:
 
 [https://www.tutorialspoint.com/execute_bash_online.php](https://www.tutorialspoint.com/execute_bash_online.php)
+
+
+# Docker
+
+```shell
+# /etc/docker/daemon.json  这里是最重要的配置文件
+
+#这个命令将显示 Docker 中镜像、容器、卷和构建缓存的占用情况
+docker system df
+# 查看某个容器的存储占用，运行
+docker ps -s
+# 查看容器内具体某个文件占用
+docker exec -it <容器名> bash
+```
