@@ -1,9 +1,9 @@
 # AI Dense Hub
 
-This is our Swiss Army knife for solving problems in the AI field.
+Nile's Cozy Algorithm Nook
 
-[![Travis](https://img.shields.io/badge/language-Java-blue.svg)]()
 [![Travis](https://img.shields.io/badge/language-Python-red.svg)]()
+[![Travis](https://img.shields.io/badge/language-Java-blue.svg)]()
 [![Travis](https://img.shields.io/badge/language-Go-red.svg)]()
 
 [online read address](https://blog.densehub.com)

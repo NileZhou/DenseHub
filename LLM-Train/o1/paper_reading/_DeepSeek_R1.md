@@ -13,10 +13,9 @@
 没使用通常与policy model大小一致的critic model，采用GRPO (Group Relative Policy Optimiazation)算法，GRPO 不依赖 critic模型，可简化训练。
 
 
-
 ## GRPO算法
 
-GRPO算法详解：对于一个问题q，用老policy模型 $\pi_{\theta_{old}}$生成一组输出 $\{o_1, o_2, \cdots, o_G\}$ ，然后通过更新policy model $\pi_{\thet}$的参数使以下objective函数最大化来优化policy model:
+GRPO算法详解：对于一个问题q，用老policy模型 $\pi_{\theta_{old}}$生成一组输出 $\{o_1, o_2, \cdots, o_G\}$ ，然后通过更新policy model $ \pi_{\theta} $ 的参数使以下objective函数最大化来优化policy model:
 $$
 \mathcal{J}_{GRPO}(\theta)=\mathbb{E} [ q \sim P(Q), \{o_i\}_{i=1}^G \sim \pi_{\theta_{old}}(O|q)] \left[\frac{1}{G} \sum_{i=1}^G \min \left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)} A_i, \text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1 - \epsilon, 1 + \epsilon\right) A_i\right) - \beta \mathbb{D}_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right],
 $$
@@ -87,6 +86,10 @@ A conversation between User and Assistant. The user asks a question, and the Ass
 
 # DeepSeek-R1
 
+
+## 整体pipeline
+
+![deepseekr1](./_imgs/deepseekr1.jpeg)
 
 
 在zero基础上，通过在前期冷启动阶段用小型高质量CoT数据来解决两个问题：

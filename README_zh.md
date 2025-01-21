@@ -1,10 +1,9 @@
 # AI Dense Hub
 
-解决AI领域各种问题的瑞士军刀
+Nile的算法小屋
 
-
-[![Travis](https://img.shields.io/badge/language-Java-blue.svg)]()
 [![Travis](https://img.shields.io/badge/language-Python-red.svg)]()
+[![Travis](https://img.shields.io/badge/language-Java-blue.svg)]()
 [![Travis](https://img.shields.io/badge/language-Go-red.svg)]()
 
 [在线阅读地址](https://blog.densehub.com)
