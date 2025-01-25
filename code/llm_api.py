@@ -34,7 +34,7 @@ def support_show_cot(model):
 
 o_client = OpenAI(
   base_url="https://openrouter.ai/api/v1",
-  api_key=os.environ.get("OPENAI_API_KEY"),
+  api_key=os.environ.get("OPENROUTER_API_KEY"),
 )
 ds_client = OpenAI(
   base_url="https://api.deepseek.com",
