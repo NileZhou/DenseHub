@@ -15,16 +15,18 @@ def encode_image(image_path):
 
 # 常用模型:
 ## 支持多模态 openai需代理
-# openai/o1                           200K context,$15/M input tokens,$60/M output tokens,$21.68/K input imgs   (需代理)
-# openai/gpt-4o-2024-11-20            128K context,$2.5/M input tokens,$10/M output tokens,$3.613/K input imgs  (需代理)
-# google/gemini-2.0-flash-exp:free    1.05M context                                                             (需开启隐私)
-# google/gemini-exp-1206:free         2.1M context                                                              (需开启隐私)
-# google/gemini-flash-1.5             1M context,$0.075/M input tokens,$0.3/M output tokens,$0.04/K input imgs  (便宜)
-# anthropic/claude-3.5-sonnet:beta    200K context,$3/M input tokens,$15/M output tokens,$4.8/K input imgs      (比4o贵)
+### openai/o1                           200K context,$15/M input tokens,$60/M output tokens,$21.68/K input imgs   (需代理)
+### openai/gpt-4o-2024-11-20            128K context,$2.5/M input tokens,$10/M output tokens,$3.613/K input imgs  (需代理)
+### google/gemini-2.0-flash-exp:free    1.05M context                                                             (需开启隐私)
+### google/gemini-exp-1206:free         2.1M context                                                              (需开启隐私)
+### google/gemini-flash-1.5             1M context,$0.075/M input tokens,$0.3/M output tokens,$0.04/K input imgs  (便宜)
+### anthropic/claude-3.5-sonnet:beta    200K context,$3/M input tokens,$15/M output tokens,$4.8/K input imgs      (比4o贵)
+### anthropic/claude-3-haiku            200K context,$0.25/M input tokens,$1.25/M output tokens,$0.4/K input imgs (便宜)
+
 ## 纯文本
-# microsoft/wizardlm-2-8x22b          66K context,$0.5/M input tokens,$0.5/M output tokens                      (角色扮演nb)
-# deepseek-reasoner                   64K context,$0.55/M input tokens,$2.19/M output tokens                    (R1:推理)
-# deepseek-chat                       64K context,$0.14/M input tokens,$0.28/M output tokens                    (便宜)
+### microsoft/wizardlm-2-8x22b          66K context,$0.5/M input tokens,$0.5/M output tokens                      (角色扮演nb)
+### deepseek-reasoner                   64K context,$0.55/M input tokens,$2.19/M output tokens                    (R1:推理)
+### deepseek-chat                       64K context,$0.14/M input tokens,$0.28/M output tokens                    (便宜)
 
 
 def support_show_cot(model):
@@ -103,9 +105,11 @@ def chat(model, prompt, img_path, log=True):
     return completion.choices[0].message.content
 
 if __name__ == '__main__':
-    model = 'deepseek-reasoner'
+    model = 'google/gemini-flash-1.5'
     prompt = '解释下这张图片'
-    img_path = '' # 为空则为纯文本问答
+    img_path = '/Users/zhouyi9/Pictures/Picture1.png' # 为空则为纯文本问答
 
     resp_text = chat(model, prompt, img_path)
     print(resp_text)
+
+
