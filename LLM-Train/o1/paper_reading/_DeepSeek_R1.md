@@ -4,8 +4,6 @@
 
 
 
-
-
 # DeepSeek-R1-Zero
 
 无finetune数据，纯RL训练，得到约为o1-mini性能的模型
@@ -14,6 +12,9 @@
 
 
 ## GRPO算法
+
+
+![grpo](./_imgs/grpo.jpeg)
 
 GRPO算法详解：对于一个问题q，用老policy模型 $\pi_{\theta_{old}}$生成一组输出 $\{o_1, o_2, \cdots, o_G\}$ ，然后通过更新policy model $ \pi_{\theta} $ 的参数使以下objective函数最大化来优化policy model:
 $$
