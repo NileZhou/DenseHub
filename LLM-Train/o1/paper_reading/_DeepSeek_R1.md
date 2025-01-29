@@ -18,7 +18,7 @@
 
 GRPO算法详解：对于一个问题q，用老policy模型 $\pi_{\theta_{old}}$生成一组输出 $\{o_1, o_2, \cdots, o_G\}$ ，然后通过更新policy model $ \pi_{\theta} $ 的参数使以下objective函数最大化来优化policy model:
 $$
-\mathcal{J}_{GRPO}(\theta)=\mathbb{E} [ q \sim P(Q), \{o_i\}_{i=1}^G \sim \pi_{\theta_{old}}(O|q)] \left[\frac{1}{G} \sum_{i=1}^G \min \left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)} A_i, \text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1 - \epsilon, 1 + \epsilon\right) A_i\right) - \beta \mathbb{D}_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right],
+\mathcal{J}_{GRPO}(\theta)=\mathbb{E} [ q \sim P(Q), \{o_i\}_{i=1}^G \sim \pi_{\theta_{old}}(O|q)] \frac{1}{G} \sum_{i=1}^G \left[ \min \left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)} A_i, \text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1 - \epsilon, 1 + \epsilon\right) A_i\right) - \beta \mathbb{D}_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right],
 $$
 其中
 $$
