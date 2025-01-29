@@ -8,7 +8,7 @@
 
 无finetune数据，纯RL训练，得到约为o1-mini性能的模型
 
-没使用通常与policy model大小一致的critic model，采用GRPO (Group Relative Policy Optimiazation)算法，GRPO 不依赖 critic模型，可简化训练。
+没使用通常与policy model大小一致的critic model，采用GRPO (Group Relative Policy Optimization)算法，GRPO 不依赖 critic模型，可简化训练。
 
 
 ## GRPO算法
@@ -39,7 +39,7 @@ $\text{clip}(x, 1-\epsilon, 1+\epsilon)$ 那一项，指的是对更新幅度进
 KL散度是一个惩罚项，控制新策略$\pi_\theta$不要偏离参考策略 $\pi_{\theta_{ref}}$太多，避免输出分布发生剧烈变化（类似正则化）
 
 **？？ 但是这里的参考策略 $\pi_{\text{ref}}(o_i|q)$ 是从哪来的呢 ？？**
-   
+
 想明白了，其实就是这一轮更新前的$\pi_{\theta}$
 
 
@@ -49,7 +49,7 @@ KL散度是一个惩罚项，控制新策略$\pi_\theta$不要偏离参考策略
 
 ## prompt template
 
-DeepSeek-R1-Zero中给ploicy model的prompt template
+DeepSeek-R1-Zero中给policy model的prompt template
 
 ```text
 A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., <think> reasoning process here </think> <answer> answer here </answer>. User: prompt. Assistant:
@@ -79,6 +79,8 @@ A conversation between User and Assistant. The user asks a question, and the Ass
 能力大概达到o1-mini，通过简单的major voting也能继续提高百分之十几的性能
 
 **涌现**出了一些反思能力和新的思维策略
+
+aha moment
 
 
 
@@ -113,7 +115,18 @@ A conversation between User and Assistant. The user asks a question, and the Ass
 
 
 
-## step1--RL
+## step1 -- SFT  (推理--冷启动)
+
+cold start:
+
+从DeepSeek-V3-Base开始，使用几千条高质量数据进行finetune，主要解决Readability的问题，或许还有高级思维、策略教学(通过kimi-k1.5猜想）
+主要是推理的冷启动
+
+
+
+
+
+## step2 -- RL （主要阶段 推理增强再增强）
 
 主要是在推理、coding、数学、科学等有clear答案的问题上训练。但还是出现了CoT里多种语言混杂的问题，作者设计了新的reward(language consistency reward)，计算方式为CoT的输出token里，目标语言token的占比。
 
@@ -121,25 +134,33 @@ PS: 作者发现引入language consistency reward会轻微降低模型性能，�
 
 
 
-最终reward = accuracy reward + language consistency reward
+最终reward = 推理数据集上的 accuracy reward + language consistency reward
 
 
 
 
 
-## step2--SFT
+## step3 -- SFT  (通用生成任务)
 
-先提升模型在特定任务（推理）的能力，然后再扩展其通用能力（写作、翻译等）
+RL训练收敛后，得到一个自闭症推理/代码天才模型，有自己的思维，但是普通人难以读懂。使用其checkpoint，进行SFT阶段训练。
 
-RL训练收敛后，使用其checkpoint，进行SFT阶段训练。造两类数据：
 
-1. 推理数据，600k条
 
-   之前的RL阶段的推理数据集都是通过rule-base的方式验证的，这个阶段用prompt让之前的 RL 模型多次输出，DeepSeek-V3来打分，过滤掉不正确的输出，得到约600k条数据
+经过强化学习
+
+思想：先提升模型在特定任务（推理）的能力，然后再扩展其通用能力（写作、翻译、角色扮演等）
+
+
+
+造两类数据：
+
+1. 推理数据，600k条  
+
+   之前的RL阶段的推理数据集都是通过rule-base的方式验证的，这个阶段用prompt让之前得到的 RL 模型多次输出，DeepSeek-V3来打分，过滤掉不正确的输出**（rejection sampling）**，得到约600k条数据
 
 2. 非推理数据，200k条
 
-   复用了一部分DeepSeek V3的SFT数据集。对于确定不是推理的任务，让DeepSeek-V3在回答前生成潜在的CoT(对于太简单的prompt，不让他生成CoT)
+   复用了一部分DeepSeek V3的SFT数据集。对于确定不是推理的任务，让DeepSeek-V3在回答前生成CoT(对于太简单的prompt，不让deepseek-v3生成CoT)
 
 
 
@@ -147,7 +168,7 @@ RL训练收敛后，使用其checkpoint，进行SFT阶段训练。造两类数�
 
 
 
-## step3--RL
+## step4 -- RL(alignment)
 
 为了提升模型的helpfulness和harmlessness，还有精炼reasoning的能力
 
@@ -160,7 +181,7 @@ RL训练收敛后，使用其checkpoint，进行SFT阶段训练。造两类数�
   使用偏好对数据，对齐人类偏好。
 
   - helpfulness: 关注于回答的final summary确保是否抓住了重点且与用户问题相关，降低推理过程的干扰
-  - harmlessness: 整个推理过程和summary是否卜阿汗潜在风险、偏见、有毒内容
+  - harmlessness: 整个推理过程和summary是否包含潜在风险、偏见、有毒内容
 
 
 
