@@ -2,93 +2,129 @@
 
 [TOC]
 
-
-
-# Background
-
-
-
-DeepSeek-R1发布，kimi团队等不及了发布o1级别的模型论文
-
-通篇重点
-
-1. 多模态
-
-2. Long context scaling是关键，无MCTS, value function, PRM
-
-3. 用long-CoT模型来构造短CoT数据，训练短CoT模型（大幅超过非o1所有模型）
+# Key points
 
 
 
+重点看evaluation方法，还有RL具体算法细节
 
 
-# Method
+
+- **Reusing trajectories**: 重复利用之前生成的轨迹，而不是from scratch 地重新生成。以此来imporve training efficiency
+- **Context Length** 是RL + LLM领域继续scaling的一个key dimension，**无需**MCTS、value functions、process reward model这些复杂的技术
+- **robust policy in RL **: long CoT训练加上 RL很可能不稳定，本文开发了一个稳定的算法 （**重点**）
+- **Multimodalities**:  **jointly reasoning** over 2 modalities(text/vision)
+- **Long2short**: 用多种方法(lenth penalty / model merging / RL)来将变长的CoT模型进行训练，使其生成更短的CoT  (猜想：**直觉思维**可能在这一步骤涌现)
+
+
+
+# Pipeline
 
 要达到Kimi k1.5，一共经历以下阶段:
 
 1. pretraining
-2. vanilla SFT
-3. long-CoT SFT
-4. RL (**本论文只关注这个阶段**)
+2. SFT
+3. long-CoT SFT: 猜测是让模型在生成long CoT时变得稳定，不会因为生成 long CoT导致性能下降
+4. RL (**本论文只关注这个阶段**，无其他阶段细节)，分为三个阶段:
+   1. 人类精心构造的prompt集合作为cold start，启发模型的思维
+   2. 高质量Long CoT warmup （文本/图文 QA对）进行Long-CoT SFT
+   3. 正式强化学习
 
 
 
-RL也分为几个阶段:
 
-1. 人类精心构造的Prompt集合
-2. 高质量Long-CoT warmup （文本/图文 QA对）进行Long-CoT SFT
-3. 正式强化学习
+## RL Step1 -- Prompt Set Curation
 
 
 
-## RL Prompt Set Curation
-
-
-
-这一阶段，主要是为SFT准备高质量的fewshot prompt。作者认为prompt搞得好可以使推理过程更robust且可避免reward hacking的风险，且可缓解模型的过拟合（出现非常流于表面的推理模式(superficial patterns))
+作者的早期大量实验表明：在保证强化学习的有效性过程中，prompt的**quality** 和 **diversity** 非常关键。Well-constructed的prompt集合不止可以引导整个reasoning过程，使其robust，而且可以减轻rewards hacking的风险，缓解模型对一些superficial patterns的过拟合。
 
 
 
 作者认为高质量RL prompt集合应该有以下特点:
 
-- Diverse
+- Diverse Coverage
 
-  范围要广，STEM, coding, general reasoning都得有
+  范围要广，STEM, coding, general reasoning都得有。且本文的prompt QA里包含纯文本与图文对。使用一个**tagging system**来对prompts进行打标，分为各个domain和discipline，保证训练数据在各个领域是均匀分布的。
 
 - Balanced Difficulty
 
-  难度范围也要广，由易到难，gradual learning，避免对一些复杂的偏难题进行过拟合。
+  由易到难地gradual learning，避免对一些复杂的偏难题进行过拟合，或者只能解决复杂度在某一个level的问题。
 
-  这里作者做了一个tagging system，不同domain和discipline都有覆盖到，用一个SFT后的模型回答10次，算pass@10，pass rate越低的难度越高
+  这里作者也做了一个**tagging system**，用一个SFT后的模型回答10次，算pass@10，pass rate越低的难度越高，给每条数据的难度进行打标
 
 - Accurate Evaluability
 
-  万变不离其宗，evaluation一定要足够客观且reliable，避免模型是靠猜或流于表面的回答来骗得高分。
+  Evaluation一定要足够**objective且reliable**，避免模型是靠猜或流于表面的回答来骗得高分。
 
-  作者先把多选，true/false，基于证明的问题都排除了，因为觉得**模型太容易猜出来**。而且让一个模型不用CoT猜8次，只要有一次猜出来了，作者就将这条case remove。
+  作者先把多选，true/false，基于证明的问题都排除了，因为觉得**模型太容易猜出来**。而且让一个模型不用CoT猜8次，只要有一次猜出来了，作者就将这条case去掉。
 
   然后用一个critic模型来评估(有正确答案作为参考) policy model回答的对不对
 
 
 
-## Long-CoT SFT
+## RL step2 -- Long-CoT SFT
 
 
 
-有了refined后的RL prompt集合，作者使用prompt engineering构建一个高质量的long-CoT warmup数据集（推理路径被准确验证），包含文本和图文问答。
+猜想：step1的prompt真的是prompt而不是数据，这些prompt是用来造数据的
 
-这个数据集里有以下多种思维模式：
-
-- planning
-- evaluation
-- reflection
-- exploration
-
-这个阶段主要就是想把这些思维模式内化在模型内部
+走到这一步才真的有一个高质量的warmup数据集
 
 
 
-# RL
+有了refined后的RL prompt集合，作者使用prompt engineering构建一个高质量的long-CoT warmup数据集（拥有verified的推理路径），包含文本和图文问答。
+
+这个数据集里有以下多种思维模式，非常类似人类的思考推理过程：
+
+- planning: 系统性、分治地思考问题
+- evaluation: 在中间步骤包含关键的评估步骤
+- reflection: 使得模型能不断重新思考，且refine自己的思维路径
+- exploration: 不断地想alternative的路径
+
+这个阶段主要就是想**把这些思维模式内化在模型内部**，实验证明进行SFT后在多个推理任务上提高了模型的性能
+
+
+
+## RL step3 -- reinforcement learning
+
+
+
+### PS: planning algorithm
+
+为了进一步提高模型推理能力，显示地用规则/策略引导模型的思维过程。其中的典型方法有:
+
+- MCTS
+
+MCTS: 设$\mathcal{T}$为一棵planning tree, 每个node是一个partial solution
+$$
+s = (x, z_{1:|s|})
+$$
+$s$ 包含了问题$x$和一个通向当前节点的thoughts序列 
+$$
+z_{1:|s|} = (z_1, \dots, z_{|s|})
+$$
+这里的$|s|$代表了序列里的thoughts个数。
+
+planning algorithm还会使用一个critic model $v$ 来提供一个反馈:
+$$
+v(x, z_{1:|s|})
+$$
+帮助评估当前步骤中是否有错误且在当前的partial solution中识别是否有错。
+
+注意这里的$v$既可以是一个score也可以是一段话，让planning 算法判断选择哪个节点继续努力。
+
+
+
+过去t轮的past history 可以计作: 
+$$
+(s_1, v(s_1), \dots, s_{t-1}, v(s_{t-1}))
+$$
+即每一个step和其对应的reward / feedback，作者在文中使用$z$来代替$s$和$v$，即代表中间过程。
+
+即，将所有本来应该是MCTS维护的信息都flatten成一个序列，也就是不需要显式构造一棵树，上下文历史本来就可以代表某种planning algorithm。
+
+
 
 
 

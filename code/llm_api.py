@@ -27,7 +27,7 @@ def encode_image(image_path):
 ### microsoft/wizardlm-2-8x22b          66K context,$0.5/M input tokens,$0.5/M output tokens                      (角色扮演nb)
 ### deepseek-reasoner                   64K context,$0.55/M input tokens,$2.19/M output tokens                    (R1:推理)
 ### deepseek-chat                       64K context,$0.14/M input tokens,$0.28/M output tokens                    (便宜)
-
+### deepseek-ai/DeepSeek-R1             164k context,128k output,$7/M input tokens,$7/M output tokens             (隐私)
 
 def support_show_cot(model):
     if model in ['deepseek-reasoner']:
@@ -42,10 +42,16 @@ ds_client = OpenAI(
   base_url="https://api.deepseek.com",
   api_key=os.environ.get("DEEPSEEK_API_KEY"),
 )
+ks_client = OpenAI(
+  base_url="https://api.kluster.ai/v1",
+  api_key=os.environ.get("KLUSTER_API_KEY"),
+)
 
 def get_client(model):
     if model in ['deepseek-reasoner']:
         return ds_client
+    if model in ['deepseek-ai/DeepSeek-R1']:
+        return ks_client
     return o_client
 
 def chat(model, prompt, img_path, log=True):
@@ -81,6 +87,8 @@ def chat(model, prompt, img_path, log=True):
             #     "X-Title": "<YOUR_SITE_NAME>", # Optional. Site title for rankings on openrouter.ai.
             # },
             model=model,
+            temperature=0.6,
+            top_p=1,
             messages=[
                 {
                     "role": "user",
@@ -105,9 +113,9 @@ def chat(model, prompt, img_path, log=True):
     return completion.choices[0].message.content
 
 if __name__ == '__main__':
-    model = 'google/gemini-flash-1.5'
-    prompt = '解释下这张图片'
-    img_path = '/Users/zhouyi9/Pictures/Picture1.png' # 为空则为纯文本问答
+    model = 'deepseek-ai/DeepSeek-R1'
+    prompt = '葡萄美酒夜光杯 这首诗说的是什么'
+    img_path = '' # 为空则为纯文本问答
 
     resp_text = chat(model, prompt, img_path)
     print(resp_text)

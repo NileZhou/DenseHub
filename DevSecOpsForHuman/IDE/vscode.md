@@ -13,7 +13,7 @@ Command + J: show/hide bottom panel
 
 # General Settings
 
-1. Ctrl + Shift + P
+1. Ctrl + Shift + P (MAC: Command + Shift + P)
 2. in the input textbox, input "settings"
 3. choose [Preferences: Open User Settings (JSON)]
 
