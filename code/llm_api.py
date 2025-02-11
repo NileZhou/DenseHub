@@ -28,23 +28,28 @@ def encode_image(image_path):
 ### deepseek-reasoner                   64K context,$0.55/M input tokens,$2.19/M output tokens                    (R1:推理)
 ### deepseek-chat                       64K context,$0.14/M input tokens,$0.28/M output tokens                    (便宜)
 ### deepseek-ai/DeepSeek-R1             164k context,128k output,$7/M input tokens,$7/M output tokens             (隐私)
+### deepseek-r1                         free
 
 def support_show_cot(model):
-    if model in ['deepseek-reasoner']:
+    if model in ['deepseek-reasoner', 'deepseek-r1']:
         return True
     return False
 
-o_client = OpenAI(
-  base_url="https://openrouter.ai/api/v1",
-  api_key=os.environ.get("OPENROUTER_API_KEY"),
-)
-ds_client = OpenAI(
-  base_url="https://api.deepseek.com",
-  api_key=os.environ.get("DEEPSEEK_API_KEY"),
-)
-ks_client = OpenAI(
-  base_url="https://api.kluster.ai/v1",
-  api_key=os.environ.get("KLUSTER_API_KEY"),
+# o_client = OpenAI(
+#   base_url="https://openrouter.ai/api/v1",
+#   api_key=os.environ.get("OPENROUTER_API_KEY"),
+# )
+# ds_client = OpenAI(
+#   base_url="https://api.deepseek.com",
+#   api_key=os.environ.get("DEEPSEEK_API_KEY"),
+# )
+# ks_client = OpenAI(
+#   base_url="https://api.kluster.ai/v1",
+#   api_key=os.environ.get("KLUSTER_API_KEY"),
+# )
+wb_arch_client = OpenAI(
+    base_url="http://10.124.16.9:40000/v1",
+    api_key='anything',
 )
 
 def get_client(model):
@@ -52,6 +57,8 @@ def get_client(model):
         return ds_client
     if model in ['deepseek-ai/DeepSeek-R1']:
         return ks_client
+    if model in ['deepseek-r1']:
+        return wb_arch_client
     return o_client
 
 def chat(model, prompt, img_path, log=True):
@@ -97,7 +104,6 @@ def chat(model, prompt, img_path, log=True):
             ]
         )
 
-    
     # print(completion)
 
     if log:
@@ -107,17 +113,16 @@ def chat(model, prompt, img_path, log=True):
         usage_str = f"\033[92m{log_id} Prompt tokens: {usage.prompt_tokens}, Completion tokens: {usage.completion_tokens}, Total tokens: {usage.total_tokens}, duration: {duration}, Completion tokens details: {usage.completion_tokens_details}, Prompt tokens details: {usage.prompt_tokens_details}\033[0m"
         print(usage_str)
         if support_show_cot(model):
-            print(f"\033[94m{completion.choices[0].message.reasoning_content}\033[0m")
+            print(f"\033[93m{completion}\033[0m")
+            # print(f"\033[94m{completion.choices[0].message.reasoning_content}\033[0m")
     
-
     return completion.choices[0].message.content
 
 if __name__ == '__main__':
-    model = 'deepseek-ai/DeepSeek-R1'
-    prompt = '葡萄美酒夜光杯 这首诗说的是什么'
+    model = 'deepseek-r1'
+    prompt = '葡萄美酒夜光杯 这首诗说的是什么, 用计算机语言应该怎么表达'
     img_path = '' # 为空则为纯文本问答
 
     resp_text = chat(model, prompt, img_path)
     print(resp_text)
-
 

@@ -26,3 +26,6 @@ docker pull太慢:
 将 nvcr.io 替换为 ngc.nju.edu.cn
 
 将 quay.io 替换为 quay.nju.edu.cn
+
+
+# 

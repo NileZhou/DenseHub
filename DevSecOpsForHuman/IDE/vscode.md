@@ -95,3 +95,26 @@ ext install yzhang.markdown-all-in-one
     "files.autoSaveDelay": 1000,
 }
 ```
+
+
+# extensions
+- Jupyter
+- Jupyter Cell Tags
+- Jupyter Keymap
+- Jupyter Notebook Renderes
+- Jupyter Slide Show
+- Python
+- Pylint
+- Python Debugger
+- Black Formatter
+- Docker
+- GitGraph
+- GitLens
+
+
+# Export
+export all settings and extensions:
+1. Open Command Palette: Ctrl+Shift+P (or Cmd+Shift+P on Mac).
+2. Type or select "Profiles: Export Profile"
+3. Choose what to export (Settings, Keybindings, Snippets, UI State, Extensions)
+4. Select export location and filename

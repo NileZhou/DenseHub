@@ -1,0 +1,20 @@
+# Conda
+
+## conda activate后默认python不变问题
+
+1. find conda related directory
+conda env list
+
+2. cd to the directory
+
+cd <directory>/conda-meta/
+
+3. vim state file
+vim state
+
+4. add path
+正常的state文件内容:
+```json
+{"env_vars": {"PATH":"/data0/users/software/cuda-12.4/bin:/data0/users/software/20240312_conda/miniconda/envs/zhouyi_internvl/bin:/data0/users/software/20240312_conda/miniconda/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/data0/users/software/20240312_conda/miniconda/envs/zhouyi_internvl/lib","LD_LIBRARY_PATH":"/data0/users/software/cuda-12.4/lib64:/data0/users/software/20240312_conda/miniconda/envs/zhouyi_internvl/lib"}}
+```
+

@@ -1,3 +1,46 @@
+# 密钥管理
+场景：同时使用公司gitlab和自己的github
+1. 生成keys
+ssh-keygen -t rsa -f <target_dir>/.ssh/id_rsa_github -C "nilezhou123@gmail.com"
+ssh-keygen -t rsa -f <target_dir>/.ssh/id_rsa_gitlab -C "<公司邮箱>"
+
+2. 复制public key到远程
+
+3. 配置SSH客户端
+vim <target_dir>/.ssh/config
+```text
+# 配置Github使用id_rsa_github
+Host github.com
+  HostName ssh.github.com
+  Port 443
+  User git
+  IdentityFile <target_dir>/.ssh/id_rsa_github
+
+# 配置GitLab使用id_rsa_gitlab
+# 替换为公司gitlab域名
+Host git.intra.weibo.com
+    HostName git.intra.weibo.com
+    Port 2222  # 替换为公司gitlab port
+    User git
+    IdentityFile <target_dir>/.ssh/id_rsa_gitlab
+```
+4. 设置文件权限
+chmod 600 <target_dir>/.ssh/id_rsa_*
+chmod 644 <target_dir>/.ssh/config
+
+5. 将密钥添加到ssh-agent
+eval "$(ssh-agent -s)"
+ssh-add <target_dir>/.ssh/id_rsa_github
+ssh-add <target_dir>/.ssh/id_rsa_gitlab
+
+6. 使用前环境变量设置
+因为不是在~/.ssh下搞的
+export GIT_SSH_COMMAND="ssh -F <target_dir>/.ssh/config"
+
+7. 测试连接
+ssh -T git@github.com
+ssh -T git@<公司域名>
+
 # 问题解决
 
 ## 每次push都弹出登录框
