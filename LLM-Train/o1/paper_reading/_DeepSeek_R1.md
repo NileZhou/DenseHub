@@ -95,6 +95,9 @@ aha moment
 
 ![deepseekr1](./_imgs/deepseekr1.jpeg)
 
+chinese version:
+![deepseekr1_zh](./_imgs/r1.webp)
+
 
 在zero基础上，通过在前期冷启动阶段用小型高质量CoT数据来解决两个问题：
 

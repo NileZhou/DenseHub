@@ -1,4 +1,5 @@
-
+整理的优秀工具合集:   
+https://github.com/RapidAI/TableStructureRec?tab=readme-ov-file
 
 
 - 

@@ -1,3 +1,5 @@
+strikethrough: 删除线
+
 The mightest empire: 最强大的帝国
 
 Reset by internal strike: 被内部反对推翻重置

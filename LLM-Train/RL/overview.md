@@ -1,4 +1,18 @@
 
+# Basic Knowledge
+
+- pipeline
+At timestep t, agent observe (state_t, reward_t), then execute action_t --> env change to state_{t+1}, give reward_{t+1}   
+- value function
+If we only care about the reward, we will fall inito a local optimum  
+The better way is: total income of state_t = immediate rewards and future gains (reward_t + \gamma * V_{t+1}):  
+$$
+V_t = R_t + \gamma V_{t+1}
+$$
+
+
+
+
 
 # Algorithms
 

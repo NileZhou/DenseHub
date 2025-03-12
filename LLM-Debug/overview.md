@@ -3,6 +3,10 @@ Debug a model is key to develop a state of the art work
 
 tools:
 
+# Code debug experience
+
+1. even bug occured in multi-node multi-card, if can reproduce it in single process program ?
+
 
 # Interventions
 

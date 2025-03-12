@@ -11,6 +11,11 @@ Shift + option + F: beautify code
 Command + J: show/hide bottom panel
 
 
+# Theme
+cmd + shift + P
+input: color, find Preferences: Color Theme
+mouse up/down choose theme
+
 # General Settings
 
 1. Ctrl + Shift + P (MAC: Command + Shift + P)
@@ -45,6 +50,7 @@ It will cause data loss in some conditions.
 
 ```
 // Place your key bindings in this file to override the defaults
+// windows:
 [
     {
         "key": "shift+alt+left",
@@ -68,6 +74,19 @@ It will cause data loss in some conditions.
     }
 ]
 ```
+// mac:
+[
+    {
+        "key": "cmd+left",
+        "command": "workbench.action.navigateBack",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+right",
+        "command": "workbench.action.navigateForward",
+        "when": "editorFocus"
+    },
+]
 
 
 # MarkDown Visual Editor

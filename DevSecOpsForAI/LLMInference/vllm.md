@@ -1,3 +1,13 @@
+# troubleshooting
+
+VLLM_USE_MODELSCOPE=True  
+这个命令参数要不得，会导致报错:  
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmplnor8nqj/gauge_mostrecent_400327.db'  
+导致启动不了
+
+# check support models
+https://docs.vllm.ai/en/latest/models/supported_models.html
+
 # Run with docker on Nvidia GPU
 
 1. First, set docker runtime to nvidia
@@ -147,34 +157,7 @@ print(f"Average Output Tokens per second: {tokens_per_second:.2f}")
 
 
 
-Namespace(
-
-host=None, 
-
-port=8000, 
-
-uvicorn_log_level='info',
-
-allow_credentials=False,
-
-api_key='token-abc123', 
-
-model='/root/.cache/huggingface/hub/models--hugging-quants--Meta-Llama-3.1-8B-Instruct-GPTQ-INT4/snapshots/ba3eae7a24afbe0fb490020523cd099b69703f65', 
-
-tokenizer=None,
-
-load_format='auto', dtype='auto', kv_cache_dtype='auto', quantization_param_path=None, max_model_len=8192, 
-
-pipeline_parallel_size=1,
-
-tensor_parallel_size=4, 
-
-max_parallel_loading_workers=None, 
-
-block_size=16, enable_prefix_caching=False, disable_sliding_window=False, use_v2_block_manager=False, num_lookahead_slots=0, seed=0, swap_space=4, cpu_offload_gb=0, gpu_memory_utilization=0.8, num_gpu_blocks_override=None, max_num_batched_tokens=None, max_num_seqs=256, max_logprobs=20, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, enforce_eager=False, max_context_len_to_capture=None, max_seq_len_to_capture=8192, disable_custom_all_reduce=False, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config=None, enable_lora=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=False, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', scheduler_delay_factor=0.0, enable_chunked_prefill=None, speculative_model=None, num_speculative_tokens=None, speculative_draft_tensor_parallel_size=None, speculative_max_model_len=None, speculative_disable_by_batch_size=None, ngram_prompt_lookup_max=None, ngram_prompt_lookup_min=None, spec_decoding_acceptance_method='rejection_sampler', 
-
-
-
+```text
 usage: api_server.py [-h] [--host HOST] [--port PORT]
                      [--uvicorn-log-level {debug,info,warning,error,critical,trace}]
                      [--allow-credentials] [--allowed-origins ALLOWED_ORIGINS]
@@ -255,3 +238,4 @@ usage: api_server.py [-h] [--host HOST] [--port PORT]
                      [--otlp-traces-endpoint OTLP_TRACES_ENDPOINT]
                      [--engine-use-ray] [--disable-log-requests]
                      [--max-log-len MAX_LOG_LEN]
+```

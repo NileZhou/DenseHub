@@ -1,3 +1,9 @@
+# get attrs in runtime
+
+```python
+keys = x.__dict__.keys()
+```
+
 # operate module in runtime
 
 load a module in runtime (because we don't know the spec module when write code, only in runtime we can know spec module path):
