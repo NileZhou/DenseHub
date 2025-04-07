@@ -1,3 +1,8 @@
+# run docker
+
+
+
+
 # docker file
 
 ## commit container to image

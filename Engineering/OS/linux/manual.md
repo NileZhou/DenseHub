@@ -17,16 +17,11 @@ Linux下开发常用命令:
 UNIX的哲学: 一切皆文件
 
 
-
 ```shell
 # linux下，假如我现在在位置path_a，cd到了位置path_b，怎么快速切回path_a?
 # - 是一个特殊参数，表示“上一个工作目录”
 cd -
 ```
-
-
-
-
 
 
 
@@ -182,6 +177,12 @@ init: init始终是第一个进程（其进程编号始终为1）。
 service: 在[Centos7](https://so.csdn.net/so/search?q=Centos7&spm=1001.2101.3001.7020).0之后，linux系统不再使用service命令进行服务管理，转而使用systemctl
 
 # cron表达式
+
+PS: 在容器中cron服务默认不启动!!!
+```shell
+service cron status  # 查看状态
+service cron start   # 如果未运行，启动服务
+```
 
 cron在Unix系统上是一个很基础的定时任务工具
 

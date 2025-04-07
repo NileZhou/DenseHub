@@ -20,7 +20,7 @@ ipdb.set_trace() # 执行到这行会自动进入ipdb
 | command | desc | eg |
 |--|--|--|
 | b | 查看所有断点 | b |
-| b (break) [location] | 设置断点 | b 10 (第10行)<br>b my_function (函数入口) |
+| b (break) [location] | 设置断点 | b 10 (当前文件的第10行)<br>b my_function (函数入口) |
 | tbreak [location] | 临时断点（命中后自动删除） | tbreak 20 |
 | cl (clear) [bpnumber] | 清除断点 | cl 1 (清除断点1) |
 | disable [bpnumber] | 禁用断点 | disable 1 |

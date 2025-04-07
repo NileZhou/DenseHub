@@ -239,3 +239,19 @@ usage: api_server.py [-h] [--host HOST] [--port PORT]
                      [--engine-use-ray] [--disable-log-requests]
                      [--max-log-len MAX_LOG_LEN]
 ```
+
+
+# usual run shell commands
+
+```shell
+CUDA_VISIBLE_DEVICES=0,3,4,6 \
+    vllm serve /njfs/train-nlp/zhouyi9/base_models/Qwen/Qwen2___5-VL-32B-Instruct \
+    --mm-processor-kwargs '{"max_pixels":1806336, "min_pixels":401408}' \
+    --tensor-parallel-size 4 \
+    --dtype bfloat16 \
+    --port 9999 \
+    --host 0.0.0.0 \
+    --gpu_memory_utilization 0.6 \
+    --max-model-len 16384 \
+    --served_model_name qwenvl
+```
