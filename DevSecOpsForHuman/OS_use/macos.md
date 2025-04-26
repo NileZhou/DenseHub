@@ -4,6 +4,13 @@ macOS官方使用手册:
 
 [https://support.apple.com/zh-cn/guide/mac-help/welcome/mac](https://support.apple.com/zh-cn/guide/mac-help/welcome/mac)
 
+## 分屏
+
+Mac双屏时程序坞（任务栏）跑到副屏上怎么办？解决办法如下
+1. 按下option+command+D，开启程序坞“自动隐藏”，副屏程序坞消失
+2. 鼠标回到主屏，放在主屏正下方中间的边缘不要动，主屏能看到扩展坞出现了
+3. 按下option+command+D，锁定其到主屏。
+
 ## 下载被阻止的文件
 
 当有弹出框说阻止安装某个来历不明的文件，但我们希望继续安装时：

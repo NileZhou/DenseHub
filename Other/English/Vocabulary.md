@@ -1,5 +1,11 @@
 strikethrough: 删除线
 
+Enquiry: 询问
+
+Rumination: 沉思
+
+comparative: 
+
 The mightest empire: 最强大的帝国
 
 Reset by internal strike: 被内部反对推翻重置
@@ -198,3 +204,14 @@ agnostic adj. 中立的，平台无关的(IT领域中用法)
 
 stellar adj. 杰出的，优秀的
 prepend verb. 在...前面加上
+
+
+
+
+
+
+
+
+
+
+

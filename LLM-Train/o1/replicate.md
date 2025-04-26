@@ -2,6 +2,10 @@ O1 replication work collection:
 
 https://huggingface.co/collections/onekq-ai/r1-reproduction-works-67a93f2fb8b21202c9eedf0b
 
+必读论文track:
+https://github.com/hijkzzz/Awesome-LLM-Strawberry
+
+
 # experience
 ## my own experience
 
@@ -13,7 +17,6 @@ https://huggingface.co/collections/onekq-ai/r1-reproduction-works-67a93f2fb8b212
 export RAY_PORT=6379
 export DASHBOARD_PORT=8265
 ray start --head --port=$RAY_PORT --dashboard-host=0.0.0.0 --dashboard-port=$DASHBOARD_PORT
-
 
 ### replicate r1
 - 1.5B模型, 7B模型都会出现completion length先下降，再上升的过程   

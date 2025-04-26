@@ -34,7 +34,7 @@ docker tag <my_compact_image> <new_img_name:version>
 # Dockerfile
 打镜像:
 ```shell
-docker build --network-host -f <docker_file_path> -t <image-name>:<tag> .
+docker build -f <docker_file_path> -t <image-name>:<tag> .
 ```
 后边的点代表打镜像时用到的上下文地址
 
