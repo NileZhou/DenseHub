@@ -12,6 +12,11 @@ Nile的算法小屋
 ## Table of Content
 
 * [首页](/)
+* [AI相关运维](/DevSecOpsForHuman/)
+  * [Dockerfile](/DevSecOpsForHuman/Nvidia/dockerfiles/)
+    * [basic-cuda-cudnn-hpcx](/DevSecOpsForHuman/Nvidia/dockerfiles/basic.Dockerfile)
+    * [llama_factory](/DevSecOpsForHuman/Nvidia/dockerfiles/llama_factory.Dockerfile)
+    * [verl](/DevSecOpsForHuman/Nvidia/dockerfiles/verl.Dockerfile)
 * [LLM](/01.大语言模型基础/)
   * [LLM 基础](/01.大语言模型基础/)
     * [Language Model](/01.大语言模型基础/1.语言模型/1.语言模型.md "1.语言模型")
