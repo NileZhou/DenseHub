@@ -1,3 +1,15 @@
+# 快速看json
+
+parquet文件 看第一行(只推荐这种方案，但是parquet文件过大的话真的看不了):
+先 pip install parquet-inspector
+pqi head -n 1 xxx.parquet | jq .
+
+
+jsonl文件看第一行:
+head -1 xxx.jsonl | jq .
+
+
+
 排查fd数量: cat /proc/sys/fs/file-nr
 
 

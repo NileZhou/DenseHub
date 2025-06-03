@@ -1,5 +1,21 @@
 # tmux
 
+
+# config
+
+1. vim ~/.tmux.conf ，输入以下内容: 
+```text
+# 开启后鼠标操作将被tmux捕获, 作用是tmux能知道我们的鼠标操作了，副作用是无法拖黑文字
+set -g mouse on
+# 解决拖黑文字：按如下配置，在窗口里按下 Ctrl + b + m，可临时切换鼠标模式 on / off
+bind m set -g mouse \; display "Mouse mode: #{?mouse,on,off}"
+# 设置缓冲区大小为 10000 行，这样不至于文件太大超出一个窗口的行数，再往上翻就翻不到了
+set-option -g history-limit 10000
+
+```
+2. tmux source-file ~/.tmux.conf , 启用配置
+
+
 # mannual
 
 [https://github.com/tmux/tmux/wiki/Getting-Started](https://github.com/tmux/tmux/wiki/Getting-Started)
@@ -83,3 +99,11 @@ set -g mouse on
 Tip
 但在以上设置下，会发现无法用中键向 tmux 中复制文本，也无法将 tmux 中选择好的文本中键复制到系统其他应用程序中。
 这里有一个 trick，那就是在 tmux 中不论选择还是复制时，都按住 Shift 键，你会发现熟悉的中键又回来了 ? 此外，还可以使用 Shift+Insert 快捷键将系统剪切板中的内容输入 tmux 中。 相对于 tmux 原生的选择模式（不加 shift 键），使用系统选择有个缺陷，即当一行内存在多个面板时，无法选择单个面板中的内容，这时就必须使用 tmux 自带的复制粘贴系统了。
+
+
+# 常见问题
+
+1. 复制粘贴到vim时格式乱掉
+解决方案: 粘贴前启用 Vim 的“粘贴模式”   
+在vim中, :set paste, 然后粘贴，再执行, :set nopaste   
+  

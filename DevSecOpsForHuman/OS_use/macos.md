@@ -4,6 +4,11 @@ macOS官方使用手册:
 
 [https://support.apple.com/zh-cn/guide/mac-help/welcome/mac](https://support.apple.com/zh-cn/guide/mac-help/welcome/mac)
 
+
+# 触摸板轻点即点击(tap as click)
+
+System Settings -> Trackpad -> turn on the 【Tap to click】
+
 ## 分屏
 
 Mac双屏时程序坞（任务栏）跑到副屏上怎么办？解决办法如下
