@@ -1,14 +1,34 @@
-# 快速看json
+防止机器OOM死机:
+```shell
+# 1.安装earlyoom,提前在内存压力高时杀掉占用大的进程(容器也是进程),安装完毕即自动启用
+sudo apt install earlyoom
+systemctl status earlyoom # 检查是否可用
+
+# 2. 调整配置
+# 配置文件在 /etc/default/earlyoom，可以调整阈值，比如：
+# 默认是低于10%空闲内存或5%空闲swap就触发
+EARLYOOM_ARGS="-m 10 -s 5 -r 60"
+# 参数含义：
+# -m: 最小可用内存百分比（低于就触发）
+# -s: 最小可用 swap 百分比
+# -r: 每秒最多打印一次日志
+
+# 3. 改完后重启服务
+sudo systemctl restart earlyoom
+```
 
 parquet文件 看第一行(只推荐这种方案，但是parquet文件过大的话真的看不了):
 先 pip install parquet-inspector
 pqi head -n 1 xxx.parquet | jq .
+pqi head -n 1 
 
 
 jsonl文件看第一行:
 head -1 xxx.jsonl | jq .
 
-
+排查inode数:
+去到某个目录下，然后: du --inodes -d 1 | sort -nr  可显示此目录下的下一级文件数
+df -ih
 
 排查fd数量: cat /proc/sys/fs/file-nr
 

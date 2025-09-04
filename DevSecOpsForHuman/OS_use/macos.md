@@ -44,3 +44,11 @@ webcal://p10-calendars.icloud.com/holiday/CN_zh.ics
 reference:
 other holiday of the world:
 https://www.ius7.com/a/388
+
+
+# 截图工具
+
+https://shottr.cc/
+
+
+

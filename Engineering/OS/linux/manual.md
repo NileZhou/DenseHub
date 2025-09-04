@@ -24,6 +24,14 @@ cd -
 ```
 
 
+## 链接 (ln)
+
+我想访问/njfs的时候，直接访问/data0:
+```shell
+ln -s /data0 /njfs
+```
+
+
 
 ## 目录结构FHS
 

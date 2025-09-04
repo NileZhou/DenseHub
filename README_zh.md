@@ -28,5 +28,8 @@ Nile的算法小屋
 * [Agent](/Agent/)
   * [Agents 调研一览](/Agent/agent_frameworks_overview.md "Agent frameworks overview")
 
+* [Agent as Model]
+  * [AgentRL](/AgentModel/agent_rl.md "Agent RL框架一览")
+
 
 

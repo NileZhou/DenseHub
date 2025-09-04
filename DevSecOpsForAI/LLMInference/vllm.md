@@ -245,7 +245,7 @@ usage: api_server.py [-h] [--host HOST] [--port PORT]
 
 ```shell
 CUDA_VISIBLE_DEVICES=0,3,4,6 \
-    vllm serve /njfs/train-nlp/zhouyi9/base_models/Qwen/Qwen2___5-VL-32B-Instruct \
+    vllm serve /njfs/train-nlp/base_models/Qwen/Qwen2___5-VL-32B-Instruct \
     --mm-processor-kwargs '{"max_pixels":1806336, "min_pixels":401408}' \
     --tensor-parallel-size 4 \
     --dtype bfloat16 \

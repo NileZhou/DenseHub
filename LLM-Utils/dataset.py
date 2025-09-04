@@ -25,8 +25,8 @@ def load_sliced_dataset(save_dir):
 
 
 if __name__ == "__main__":
-    ori_ds_path = '/njfs/train-nlp/zhouyi9/datasets/cache/open-r1___open_r1-math-220k/default/0.0.0/e4e141ec9dea9f8326f4d347be56105859b2bd68'
-    save_ds_path = '/njfs/train-nlp/zhouyi9/datasets/cache/open_r1-math-224'
+    ori_ds_path = '/njfs/train-nlp/x/datasets/cache/open-r1___open_r1-math-220k/default/0.0.0/e4e141ec9dea9f8326f4d347be56105859b2bd68'
+    save_ds_path = '/njfs/train-nlp/x/datasets/cache/open_r1-math-224'
     sliced_ds = slice_and_save_dataset(ori_ds_path, save_ds_path, n=56*4)
     sliced_ds = load_sliced_dataset(save_ds_path)
     print(sliced_ds)

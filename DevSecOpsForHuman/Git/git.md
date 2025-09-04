@@ -85,7 +85,7 @@ git config --global user.name <用户名，和远程一样>
 git config --global user.email <邮箱, 和远程一样>
 ```
 
-# 给分支设置新上游
+# 给分支设置新上游(做开源贡献)
 
 需求: 我在Github上把别人的项目A  fork 到了自己的空间，变为B，然后clone B到本地
         怎么才能在本地将A的更新同步到B，并拉取到本地呢?
@@ -111,6 +111,20 @@ git config --global user.email <邮箱, 和远程一样>
 5. 推送更新到你的GitHub仓库（B）
 
    git push origin master  # 或者 git push origin main
+
+
+# 关联本地分支到远程新分支
+需求：把本地一个项目远程git化
+
+在本地项目里
+1. git init
+2. git remote add origin ssh://git@\<host\>:\<port\>/xxxx.git (远程新建好的git地址)
+3. git add .
+4. git commit -m "Initial commit with local project files"
+5. git config pull.rebase false （merge远程的readme到本地）
+6. git pull origin master --allow-unrelated-histories   把本地的推到远程
+7. git remote -v   查看是否关联到远程分支
+
 
 # 分支暂存
 

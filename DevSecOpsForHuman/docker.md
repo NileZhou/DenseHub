@@ -1,6 +1,27 @@
 # run docker
 
 
+运行容器example:
+```shell
+#!/bin/bash -x
+
+docker run \
+  --name <容器名> \
+  --gpus all \
+  --memory=256g \
+  --memory-swap=256g \
+  --cpus=64 \
+  -p 10422:22 \ # 宿主机port : 容器内port
+  -p 10480:7860 \
+  -p 10423:10423 \
+  -p 8365:8365 \
+  -p 6389:6389 \
+  -v /data0/zzz:/data0/zzz \ # 宿主机路径:容器内路径，最好一致
+  -v /njfs/train-aitech:/njfs/train-aitech \
+  --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
+  ssh_pytorch_24d10 # 镜像名
+```
+
 
 
 # docker file
@@ -22,8 +43,8 @@ rm -rf /tmp/* /var/tmp/*
 
 宿主机执行:
 
-*将容器导出为扁平化tar包（会丢失历史层）这样得到的image只会有一层*   
-<del>docker export <container-id> | docker import - <my_compact_image></del>
+*推荐的将容器打包成镜像的方法，将容器导出为扁平化tar包（会丢失历史层）这样得到的image只会有一层*   
+docker export <container-id> | docker import - <my_compact_image>
 
 ```shell
 
@@ -108,7 +129,7 @@ docker push <远程仓库域名>/<仓库名>/<新镜像名>:<新tag>
 
 # start container from image
 ## 注意后面不能加 /bin/bash，否则容器跑不起来，会变成Exited(0)状态
-docker run -it -p <本地端口>:<容器端口> <镜像name:tag> 
+docker run -it -p <本地端口>:<容器端口> -v <本地路径>:<容器路径> <镜像name:tag> 
 
 # container 管理
 docker stop Name或者ID  

@@ -11,6 +11,17 @@ Shift + option + F: beautify code
 Command + J: show/hide bottom panel
 
 
+# Proxy Setting
+cmd + shift + p
+input: "Preferences: Open Remote Settings" (If in remote dev environment) or "Preferences: Open User Settings" (local env)
+then add these:
+```text
+    "http.proxy": "http://<ip>:<port>",
+    "http.proxyStrictSSL": false,
+    "cursor.general.disableHttp2": true,
+```
+
+
 # Theme
 cmd + shift + P
 input: color, find Preferences: Color Theme
