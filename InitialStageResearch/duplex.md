@@ -16,3 +16,9 @@ ModelArchitecture: [Language Model Can Listen While Speaking](https://arxiv.org/
 MiniCPM: [Beyond the Turn-Based Game: Enabling Real-Time Conversations with Duplex Models](https://arxiv.org/abs/2406.15718)   
 [Code](https://github.com/thunlp/duplex-model?tab=readme-ov-file)
 
+
+Bytedance的LSLM: [Language Model Can Listen While Speaking](https://arxiv.org/pdf/2408.02622)  
+[Github](https://github.com/sanowl/LSLM-Listening-while-Speaking-Language-Model)
+
+Seed LiveInterpret2.0: 实时同声传译 [paper](https://arxiv.org/pdf/2507.17527)
+

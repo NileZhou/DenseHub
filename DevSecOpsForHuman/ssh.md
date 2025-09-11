@@ -83,8 +83,14 @@ chmod 600 ~/.ssh/authorized_keys
 
 或者
 ```bash
-ssh-copy-id -i ~/.ssh/id_rsa_vllm.pub -p 19422 root@10.1.126.13 # 如果远程暴露出的端口是19422
+ssh-copy-id -i ~/.ssh/id_rsa_gitlab.pub -p 19422 root@10.1.126.13 # 如果远程暴露出的端口是19422
 ```
+
+如果远程机器重装系统了，ssh-copy-id会报错，要删除下本地的主机记录：
+```bash
+ssh-keygen -R "[10.1.126.13]:19422"
+```
+
 
 **3. 配置本地SSH config文件 (~/.ssh/config)**
 
