@@ -68,7 +68,7 @@ launch.json:
 cd /path/project_path
 # 0.0.0.0 代表来者不拒， oexps/base_models/gen.py代表从项目根地址出发到此文件的地址
 python -m debugpy --listen 0.0.0.0:<remote port > --wait-for-client oexps/base_models/gen.py
-
+python -m debugpy --listen 0.0.0.0:5678 --wait-for-client oexps/base_models/gen.py
 
 # 在vscode中:
 # 打开左上角 "Start Debugging"
