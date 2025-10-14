@@ -19,6 +19,7 @@ Nile's Cozy Algorithm Nook
 * [LLM](/01.大语言模型基础/)
   * [LLM Basics](/01.大语言模型基础/)
     * [Language Model](/01.大语言模型基础/1.语言模型/1.语言模型.md "1.语言模型")
+    * [Algorithm implementation](/Interview/LLM/algorithms.md "2.算法实现")
   * [LLM Train](/LLM-Train/)
     * [O1](/LLM-Train/o1/)
       * [Paper reading](/LLM-Train/o1/paper_reading/)
