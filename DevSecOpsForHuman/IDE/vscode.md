@@ -148,3 +148,51 @@ export all settings and extensions:
 2. Type or select "Profiles: Export Profile"
 3. Choose what to export (Settings, Keybindings, Snippets, UI State, Extensions)
 4. Select export location and filename
+
+
+# A Typical template
+
+Open User Settings (JSON), then edit like this:
+
+```json
+{
+    "workbench.activityBar.location": "top",
+    "parallels-desktop.extension.path": "/root/.parallels-desktop-vscode",
+    "remote.SSH.defaultExtensions": [
+        "anyscalecompute.anyscale-workspaces",
+        "ms-python.python",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter"
+    ],
+    "workbench.trustedDomains.promptInTrustedWorkspace": true,
+    "geminicodeassist.updateChannel": "Default",
+    "http.proxyStrictSSL": false,
+    "remote.SSH.useCurlAndWgetConfigurationFiles": true,
+    "geminicodeassist.verboseLogging": true,
+    "workbench.iconTheme": "vscode-icons",
+    "remote.autoForwardPortsSource": "hybrid",
+    "telemetry.editStats.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.colorTheme": "Dracula Theme",
+    "claudeCode.preferredLocation": "panel",
+    "chat.agent.enabled": false,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "remote.SSH.remotePlatform": {
+        "192.168.36.5": "linux"
+    },
+    "chatgpt.cliExecutable": "",
+    "claudeCode.environmentVariables": [
+        {
+        "name": "ANTHROPIC_BASE_URL",
+        "value": "https://subus.imds.ai/"
+        },
+        {
+        "name": "ANTHROPIC_AUTH_TOKEN",
+        "value": "sk-your api key"
+        }
+    ],
+    "workbench.settings.applyToAllProfiles": [
+    ],
+}
+```
