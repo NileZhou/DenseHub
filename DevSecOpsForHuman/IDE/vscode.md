@@ -7,7 +7,7 @@ Ctrl + P:  quick search file/directory name, like "Shift Shift" in JB
 
 
 ## mac
-Shift + option + F: beautify code
+Shift + Option + F: beautify code
 Command + J: show/hide bottom panel
 
 

@@ -11,8 +11,8 @@ ESC模式下:
 
 vim ~/.vimrc,输入以下:
 ```shell
-set encoding=utf-8      " Vim 内部编码
-set fileencodings=utf-8,gbk,gb18030,big5 " 自动识别文件编码列表
+set encoding=utf-8 " Vim 内部编码
+set fileencodings=utf-8,gbk,gb18030,latin1,big5   " 自动识别文件编码列表
 set termencoding=utf-8  " 终端编码
 set ambiwidth=double    " 处理全角符号（如中文引号
 ```
