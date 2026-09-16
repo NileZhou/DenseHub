@@ -5,10 +5,36 @@ search for help: [vscode_docs](https://code.visualstudio.com/docs/editor/codebas
 ## windows
 Ctrl + P:  quick search file/directory name, like "Shift Shift" in JB
 
+## Linux
+
+后退：Alt + ← (左箭头)
+前进：Alt + → (右箭头)
+
 
 ## mac
 Shift + Option + F: beautify code
 Command + J: show/hide bottom panel
+
+Control + '-': Go back to last time cursor position
+Control + Shift + '-': Go forward to next time cursor positon
+改键位：
+
+Cmd + Shift + P → 搜索 Preferences: Open Keyboard Shortcuts (JSON)，然后在keybindings.json里这么改：
+```json
+[
+    // 将后退改为 Command + 左箭头
+    {
+        "key": "cmd+left",
+        "command": "workbench.action.navigateBack"
+    },
+    // 将前进改为 Command + 右箭头
+    {
+        "key": "cmd+right",
+        "command": "workbench.action.navigateForward"
+    }
+]
+```
+
 
 
 # Proxy Setting
@@ -20,6 +46,8 @@ then add these:
     "http.proxyStrictSSL": false,
     "cursor.general.disableHttp2": true,
 ```
+
+
 
 
 # Theme
@@ -153,6 +181,8 @@ export all settings and extensions:
 # A Typical template
 
 Open User Settings (JSON), then edit like this:
+
+Note: 很多时候terminal显示错误的问题在于这里没有正确的配置
 
 ```json
 {

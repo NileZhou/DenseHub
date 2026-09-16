@@ -47,6 +47,10 @@ $ tmus ls
 # 使用会话编号或具体名字
 $ tmux kill-session -t 0
 $ tmux kill-session -t <session-name>
+
+# 进入鼠标可以拖黑文字且可以滚轮翻页的模式
+$ ctrl + b, 然后按 [  # 进入copy mode模式， 然后可以上下滚动鼠标滚轮来翻页, 也可以fn + 上/下 来翻页
+$ q # 退出copy mode模式
 ```
 
 状态栏:

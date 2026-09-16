@@ -1,5 +1,9 @@
 # Conda
 
+## miniconda on shared disk
+
+mkdir -p <共享盘>/nick.zhou/envs
+
 ## 安装miniconda
 
 *参考：下载:https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions*

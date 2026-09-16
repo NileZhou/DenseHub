@@ -46,4 +46,11 @@ IS_SANDBOX=1 claude --dangerously-skip-permissions
 | `/exit` | 退出 Claude Code CLI 交互终端（别名 `/quit`） |
 
 > **提示**：在对话中输入 `@` 符号，可直接搜索并引用具体的文件、目录或网页链接作为上下文。
-> 
+
+
+# permission settings
+
+claude \
+  --allowedTools "Read" "Grep" "Glob" \
+  --allowedTools "Bash(ls:*)" "Bash(cat:*)" "Bash(find:*)" \
+  --allowedTools "Bash(npm test:*)" "Bash(pytest:*)"
